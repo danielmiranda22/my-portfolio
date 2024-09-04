@@ -1,6 +1,8 @@
 import {
+  Box,
   Button,
   Center,
+  Container,
   Drawer,
   DrawerBody,
   DrawerCloseButton,
@@ -42,6 +44,7 @@ const NavBar = () => {
 
   return (
     <Flex
+      px={4}
       justifyContent="center"
       direction={'row'}
       zIndex="sticky"
@@ -52,9 +55,11 @@ const NavBar = () => {
     >
       {isLargerThanMD ? (
         <>
-          <HStack flexGrow={1} maxW={'5xl'} gap={0}>
-            <Home size="md" />
-            <HStack ms="auto" spacing={7} justifyContent="end">
+          <Container display="flex" maxW={'3xl'}>
+            <HStack flexGrow={1}>
+              <Home size="lg" />
+            </HStack>
+            <HStack spacing={7}>
               {NavItems.map((item, index) => (
                 <Button
                   key={index}
@@ -67,7 +72,7 @@ const NavBar = () => {
               ))}
               <ThemeButton />
             </HStack>
-          </HStack>
+          </Container>
         </>
       ) : (
         <>
@@ -90,7 +95,7 @@ const NavBar = () => {
                 <DrawerContent>
                   <DrawerCloseButton color={colors['teal']} />
                   <DrawerHeader alignSelf="center" my="100px">
-                    <Home size="xl" />
+                    <Home size="xx-large" />
                   </DrawerHeader>
                   <DrawerBody alignContent="start">
                     <VStack spacing={7}>

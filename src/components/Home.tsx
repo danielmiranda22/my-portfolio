@@ -9,12 +9,12 @@ interface Props {
 const Home = ({ size }: Props) => {
   const profile = ProfileData();
   return (
-    <Heading as="h2" size={size}>
+    <Button className="nav-btn" variant="link" fontSize={size}>
       {profile.logo}
       <Text as="span" color={colors['teal']}>
         .
       </Text>
-    </Heading>
+    </Button>
   );
 };
 

@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react';
 const parseProfile = (mdContent: string) => {
   const profile = {
     logo: '',
+    heroCumpliment: '',
+    heroNameIntro: '',
+    heroName: '',
+    heroRole: '',
+    heroDescription: '',
   };
 
   const lines = mdContent.split('\n');
@@ -18,6 +23,13 @@ const parseProfile = (mdContent: string) => {
           i++;
           profile.logo = lines[++i].substring(2).trim();
           break;
+        case 'Hero':
+          i++;
+          profile.heroCumpliment = lines[++i].substring(2).trim();
+          profile.heroNameIntro = lines[++i].substring(2).trim();
+          profile.heroName = lines[++i].substring(2).trim();
+          profile.heroRole = lines[++i].substring(2).trim();
+          profile.heroDescription = lines[++i].substring(2).trim();
         default:
           break;
       }
@@ -28,7 +40,14 @@ const parseProfile = (mdContent: string) => {
 };
 
 const ProfileData = () => {
-  const [profile, setProfile] = useState({ logo: '' });
+  const [profile, setProfile] = useState({
+    logo: '',
+    heroCumpliment: '',
+    heroNameIntro: '',
+    heroName: '',
+    heroRole: '',
+    heroDescription: '',
+  });
 
   useEffect(() => {
     fetch('/content/Profile.md')

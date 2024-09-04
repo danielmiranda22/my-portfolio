@@ -7,8 +7,8 @@ const config: ThemeConfig = {
 const theme = extendTheme({
   config,
   fonts: {
-    heading: `'Open Sans', sans-serif`,
-    body: `'Raleway', sans-serif`,
+    heading: `'Geist Mono'`,
+    body: `'Geist Mono'`,
   },
 });
 

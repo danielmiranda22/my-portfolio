@@ -8,6 +8,18 @@ const parseProfile = (mdContent: string) => {
     heroName: '',
     heroRole: '',
     heroDescription: '',
+    aboutTopicOne: '',
+    aboutTopicTwo: '',
+    aboutTopicThree: '',
+    aboutExtraTitle: '',
+    aboutExtraTravel: '',
+    aboutExtraPlaySports: '',
+    aboutExtraHangOut: '',
+    skills: [] as string[],
+    tools: [] as string[],
+    contactPhoneNumber: '',
+    contactEmail: '',
+    contactLinkdin: '',
   };
 
   const lines = mdContent.split('\n');
@@ -30,6 +42,50 @@ const parseProfile = (mdContent: string) => {
           profile.heroName = lines[++i].substring(2).trim();
           profile.heroRole = lines[++i].substring(2).trim();
           profile.heroDescription = lines[++i].substring(2).trim();
+          break;
+        case 'About':
+          i++;
+          profile.aboutTopicOne = lines[++i].substring(2).trim();
+          profile.aboutTopicTwo = lines[++i].substring(2).trim();
+          profile.aboutTopicThree = lines[++i].substring(2).trim();
+          break;
+        case 'AboutExtra':
+          i++;
+          profile.aboutExtraTitle = lines[++i].substring(2).trim();
+          profile.aboutExtraTravel = lines[++i].substring(2).trim();
+          profile.aboutExtraPlaySports = lines[++i].substring(2).trim();
+          profile.aboutExtraHangOut = lines[++i].substring(2).trim();
+          break;
+        case 'Skills':
+          i++;
+          for (let j = i; j < lines.length; j++) {
+            const line = lines[j];
+            if (line.startsWith('- ')) {
+              profile.skills.push(lines[j].substring(2).trim());
+            }
+            if (line.startsWith('## ')) {
+              break;
+            }
+          }
+          break;
+        case 'Tools':
+          i++;
+          for (let j = i; j < lines.length; j++) {
+            const line = lines[j];
+            if (line.startsWith('- ')) {
+              profile.tools.push(lines[j].substring(2).trim());
+            }
+            if (line.startsWith('## ')) {
+              break;
+            }
+          }
+          break;
+        case 'Contact':
+          i++;
+          profile.contactPhoneNumber = lines[++i].substring(2).trim();
+          profile.contactEmail = lines[++i].substring(2).trim();
+          profile.contactLinkdin = lines[++i].substring(2).trim();
+          break;
         default:
           break;
       }
@@ -47,6 +103,18 @@ const ProfileData = () => {
     heroName: '',
     heroRole: '',
     heroDescription: '',
+    aboutTopicOne: '',
+    aboutTopicTwo: '',
+    aboutTopicThree: '',
+    aboutExtraTitle: '',
+    aboutExtraTravel: '',
+    aboutExtraPlaySports: '',
+    aboutExtraHangOut: '',
+    skills: [] as string[],
+    tools: [] as string[],
+    contactPhoneNumber: '',
+    contactEmail: '',
+    contactLinkdin: '',
   });
 
   useEffect(() => {

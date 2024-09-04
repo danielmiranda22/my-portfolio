@@ -11,7 +11,7 @@ import {
   DrawerOverlay,
   Flex,
   HStack,
-  IconButton,
+  useColorModeValue,
   useDisclosure,
   useMediaQuery,
   VStack,
@@ -30,6 +30,7 @@ import { CiMenuFries } from 'react-icons/ci';
 import ThemeButton from './ThemeButton';
 import Home from './Home';
 import colors from '../utilities/colors';
+import { SyntheticEvent, useState } from 'react';
 
 const NavItems = [
   { title: 'About', icon: <LuUser /> },
@@ -41,31 +42,70 @@ const NavItems = [
 const NavBar = () => {
   const [isLargerThanMD] = useMediaQuery('(min-width: 48em)');
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [activeIndex, setActiveIndex] = useState<string | undefined>(undefined);
+
+  const goToTheSpecificSection = (
+    e: SyntheticEvent,
+    item: string | undefined
+  ) => {
+    if ((e.target as Element).classList.contains('Hero')) {
+      document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if ((e.target as Element).classList.contains('About')) {
+      document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if ((e.target as Element).classList.contains('Experience')) {
+      document
+        .querySelector('#experience')
+        ?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if ((e.target as Element).classList.contains('Projects')) {
+      document
+        .querySelector('#projects')
+        ?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    if ((e.target as Element).classList.contains('Contact')) {
+      document
+        .querySelector('#contact')
+        ?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    setActiveIndex(item);
+  };
 
   return (
     <Flex
-      px={4}
+      bg={useColorModeValue(colors['gray100'], colors['gray900'])}
       justifyContent="center"
       direction={'row'}
       zIndex="sticky"
       position="fixed"
       as="header"
       w="100%"
-      my={4}
+      py={4}
     >
       {isLargerThanMD ? (
         <>
           <Container display="flex" maxW={'3xl'}>
             <HStack flexGrow={1}>
-              <Home size="lg" />
+              <Home
+                size="lg"
+                onClick={(e) => goToTheSpecificSection(e, undefined)}
+              />
             </HStack>
             <HStack spacing={7}>
               {NavItems.map((item, index) => (
                 <Button
+                  onClick={(e) => goToTheSpecificSection(e, item.title)}
                   key={index}
                   className={`nav-btn ${item.title}`}
                   leftIcon={item.icon}
                   variant="link"
+                  color={activeIndex === item.title ? colors['teal'] : ''}
                 >
                   {item.title}
                 </Button>
@@ -95,7 +135,10 @@ const NavBar = () => {
                 <DrawerContent>
                   <DrawerCloseButton color={colors['teal']} />
                   <DrawerHeader alignSelf="center" my="100px">
-                    <Home size="xx-large" />
+                    <Home
+                      size="xx-large"
+                      onClick={(e) => goToTheSpecificSection(e, undefined)}
+                    />
                   </DrawerHeader>
                   <DrawerBody alignContent="start">
                     <VStack spacing={7}>

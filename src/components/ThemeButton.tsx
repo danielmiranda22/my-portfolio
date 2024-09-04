@@ -5,7 +5,7 @@ const ThemeButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Button className="nav-btn" variant="link" onClick={toggleColorMode}>
+    <Button variant="solid" onClick={toggleColorMode}>
       {colorMode === 'light' ? <LuMoonStar /> : <LuSun />}
     </Button>
   );

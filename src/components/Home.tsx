@@ -1,12 +1,20 @@
-import { Button } from '@chakra-ui/react';
+import { Box, Button, Heading, HStack, Stack, Text } from '@chakra-ui/react';
 import ProfileData from '../data/ProfileData';
+import colors from '../utilities/colors';
 
-const Home = () => {
+interface Props {
+  size?: string;
+}
+
+const Home = ({ size }: Props) => {
   const profile = ProfileData();
   return (
-    <Button className="nav-btn" variant="link">
+    <Heading as="h2" size={size}>
       {profile.logo}
-    </Button>
+      <Text as="span" color={colors['teal']}>
+        .
+      </Text>
+    </Heading>
   );
 };
 

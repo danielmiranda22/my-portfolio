@@ -18,10 +18,13 @@ import {
   LuAtSign,
   LuBriefcase,
   LuFile,
+  LuKanban,
   LuLaptop2,
   LuMenu,
+  LuText,
   LuUser,
 } from 'react-icons/lu';
+import { CiMenuFries } from 'react-icons/ci';
 import ThemeButton from './ThemeButton';
 import Home from './Home';
 import colors from '../utilities/colors';
@@ -39,19 +42,19 @@ const NavBar = () => {
 
   return (
     <Flex
+      justifyContent="center"
       direction={'row'}
       zIndex="sticky"
       position="fixed"
       as="header"
       w="100%"
-      my={2}
-      padding="10px"
+      my={4}
     >
       {isLargerThanMD ? (
         <>
-          <HStack justifyContent="space-between" flexGrow={1}>
-            <Home />
-            <HStack spacing={6}>
+          <HStack flexGrow={1} maxW={'5xl'} gap={0}>
+            <Home size="md" />
+            <HStack ms="auto" spacing={7} justifyContent="end">
               {NavItems.map((item, index) => (
                 <Button
                   key={index}
@@ -62,8 +65,8 @@ const NavBar = () => {
                   {item.title}
                 </Button>
               ))}
+              <ThemeButton />
             </HStack>
-            <ThemeButton />
           </HStack>
         </>
       ) : (
@@ -72,9 +75,9 @@ const NavBar = () => {
             <HStack justifyContent="end" flexGrow={1}>
               <ThemeButton />
               <Button
-                className="nav-btn"
+                className="nav-btn navbar-toggle-btn"
                 variant="link"
-                leftIcon={<LuMenu />}
+                leftIcon={<CiMenuFries />}
                 onClick={onOpen}
               ></Button>
               <Drawer
@@ -87,10 +90,10 @@ const NavBar = () => {
                 <DrawerContent>
                   <DrawerCloseButton color={colors['teal']} />
                   <DrawerHeader alignSelf="center" my="100px">
-                    <Home />
+                    <Home size="xl" />
                   </DrawerHeader>
                   <DrawerBody alignContent="start">
-                    <VStack spacing={6}>
+                    <VStack spacing={7}>
                       {NavItems.map((item, index) => (
                         <Button
                           key={index}

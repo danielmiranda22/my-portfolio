@@ -1,0 +1,7 @@
+.nav-btn {
+  text-decoration: none !important;
+}
+
+.nav-btn:hover {
+  color: teal;
+}

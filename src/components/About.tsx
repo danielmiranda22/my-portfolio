@@ -8,6 +8,7 @@ import {
   Image,
   Stack,
   Text,
+  useMediaQuery,
   VStack,
 } from '@chakra-ui/react';
 import colors from '../utilities/colors';
@@ -20,6 +21,7 @@ import Skill from './Skill';
 
 const About = () => {
   const profile = ProfileData();
+  const [isLargerThanMD] = useMediaQuery('(min-width: 48em)');
 
   return (
     <Container maxW="3xl" id="about">
@@ -35,7 +37,11 @@ const About = () => {
           BRIEF INRODUCTION <Text color={`${colors['teal']}`}>OF MYSELF</Text>
         </Heading>
 
-        <Flex direction="row">
+        <Flex
+          direction="row"
+          flexWrap={isLargerThanMD ? 'nowrap' : 'wrap'}
+          justifyContent="center"
+        >
           <VStack spacing={4}>
             <Text
               as="span"

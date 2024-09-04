@@ -16,33 +16,16 @@ import {
   useMediaQuery,
   VStack,
 } from '@chakra-ui/react';
-import {
-  LuAtSign,
-  LuBriefcase,
-  LuFile,
-  LuKanban,
-  LuLaptop2,
-  LuMenu,
-  LuText,
-  LuUser,
-} from 'react-icons/lu';
 import { CiMenuFries } from 'react-icons/ci';
 import ThemeButton from './ThemeButton';
 import Home from './Home';
 import colors from '../utilities/colors';
 import { SyntheticEvent, useState } from 'react';
 
-const NavItems = [
-  { title: 'About', icon: <LuUser /> },
-  { title: 'Experience', icon: <LuBriefcase /> },
-  { title: 'Projects', icon: <LuLaptop2 /> },
-  { title: 'Resume', icon: <LuFile /> },
-  { title: 'Contact', icon: <LuAtSign /> },
-];
+const NavItems = ['About', 'Experience', 'Projects', 'Resume', 'Contact'];
 const NavBar = () => {
   const [isLargerThanMD] = useMediaQuery('(min-width: 48em)');
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [activeIndex, setActiveIndex] = useState<string | undefined>(undefined);
 
   const goToTheSpecificSection = (
     e: SyntheticEvent,
@@ -50,6 +33,8 @@ const NavBar = () => {
   ) => {
     if ((e.target as Element).classList.contains('Hero')) {
       document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState('object or string', 'Title', '/' + '');
+      return;
     }
 
     if ((e.target as Element).classList.contains('About')) {
@@ -74,7 +59,7 @@ const NavBar = () => {
         ?.scrollIntoView({ behavior: 'smooth' });
     }
 
-    setActiveIndex(item);
+    window.history.pushState('object or string', 'Title', '/' + item);
   };
 
   return (
@@ -100,14 +85,12 @@ const NavBar = () => {
             <HStack spacing={7}>
               {NavItems.map((item, index) => (
                 <Button
-                  onClick={(e) => goToTheSpecificSection(e, item.title)}
+                  onClick={(e) => goToTheSpecificSection(e, item)}
                   key={index}
-                  className={`nav-btn ${item.title}`}
-                  leftIcon={item.icon}
+                  className={`nav-btn ${item}`}
                   variant="link"
-                  color={activeIndex === item.title ? colors['teal'] : ''}
                 >
-                  {item.title}
+                  {item}
                 </Button>
               ))}
               <ThemeButton />
@@ -144,12 +127,12 @@ const NavBar = () => {
                     <VStack spacing={7}>
                       {NavItems.map((item, index) => (
                         <Button
+                          onClick={(e) => goToTheSpecificSection(e, item)}
                           key={index}
-                          className={`nav-btn ${item.title}`}
-                          leftIcon={item.icon}
+                          className={`nav-btn ${item}`}
                           variant="link"
                         >
-                          {item.title}
+                          {item}
                         </Button>
                       ))}
                     </VStack>

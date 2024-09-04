@@ -48,10 +48,10 @@ const Contact = () => {
           </Text>
           <HStack spacing={4} justify="center">
             <Circle border="1px" borderColor={colors['teal']} size="30px">
-              <LuLinkedin color={colors['gray100']} onClick={goToLinkdin} />
+              <LuLinkedin onClick={goToLinkdin} />
             </Circle>
             <Circle border="1px" borderColor={colors['teal']} size="30px">
-              <LuMail color={colors['gray100']} onClick={goToEmail} />
+              <LuMail onClick={goToEmail} />
             </Circle>
           </HStack>
         </Stack>

@@ -1,13 +1,18 @@
 import {
   Button,
+  Center,
   Drawer,
+  DrawerBody,
+  DrawerCloseButton,
   DrawerContent,
+  DrawerHeader,
   DrawerOverlay,
   Flex,
   HStack,
   IconButton,
   useDisclosure,
   useMediaQuery,
+  VStack,
 } from '@chakra-ui/react';
 import {
   LuAtSign,
@@ -19,6 +24,7 @@ import {
 } from 'react-icons/lu';
 import ThemeButton from './ThemeButton';
 import Home from './Home';
+import colors from '../utilities/colors';
 
 const NavItems = [
   { title: 'About', icon: <LuUser /> },
@@ -66,25 +72,37 @@ const NavBar = () => {
             <HStack justifyContent="end" flexGrow={1}>
               <ThemeButton />
               <Button
-                as={IconButton}
-                icon={<LuMenu />}
+                className="nav-btn"
+                variant="link"
+                leftIcon={<LuMenu />}
                 onClick={onOpen}
               ></Button>
-              <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
+              <Drawer
+                placement="right"
+                onClose={onClose}
+                isOpen={isOpen}
+                size="xs"
+              >
                 <DrawerOverlay />
-                <DrawerContent padding={2}>
-                  <HStack justifyContent="left" flexWrap="wrap">
-                    {NavItems.map((item, index) => (
-                      <Button
-                        key={index}
-                        className={`nav-btn ${item.title}`}
-                        leftIcon={item.icon}
-                        variant="link"
-                      >
-                        {item.title}
-                      </Button>
-                    ))}
-                  </HStack>
+                <DrawerContent>
+                  <DrawerCloseButton color={colors['teal']} />
+                  <DrawerHeader alignSelf="center" my="100px">
+                    <Home />
+                  </DrawerHeader>
+                  <DrawerBody alignContent="start">
+                    <VStack spacing={6}>
+                      {NavItems.map((item, index) => (
+                        <Button
+                          key={index}
+                          className={`nav-btn ${item.title}`}
+                          leftIcon={item.icon}
+                          variant="link"
+                        >
+                          {item.title}
+                        </Button>
+                      ))}
+                    </VStack>
+                  </DrawerBody>
                 </DrawerContent>
               </Drawer>
             </HStack>

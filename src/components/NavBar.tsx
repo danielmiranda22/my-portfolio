@@ -53,6 +53,10 @@ const NavBar = () => {
         ?.scrollIntoView({ behavior: 'smooth' });
     }
 
+    if ((e.target as Element).classList.contains('Resume')) {
+      document.querySelector('#resume')?.scrollIntoView({ behavior: 'smooth' });
+    }
+
     if ((e.target as Element).classList.contains('Contact')) {
       document
         .querySelector('#contact')
@@ -75,7 +79,7 @@ const NavBar = () => {
     >
       {isLargerThanMD ? (
         <>
-          <Container display="flex" maxW={'3xl'}>
+          <Container display="flex" maxW={'4xl'}>
             <HStack flexGrow={1}>
               <Home
                 size="lg"

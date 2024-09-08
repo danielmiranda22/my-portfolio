@@ -46,8 +46,19 @@
 - Git
 - Azure
 
+## Resume
+
+- Web Developement
+  -> Collaborated on the development of several web applications; currently maintaining and implementing new features.
+- Mobile Developement
+  -> Developed an access control and time clocking application.
+  -> Contributed to the design and development of a scanner application for ticket validation.
+- Desktop Developement
+  -> Collaborated on the development of various Windows applications, focusing on maintaining legacy systems.
+
 ## Contact
 
 - (+351) 912 012 095
 - danmiranda227@gmail.com
+- Porto, Portugal
 - https://www.linkedin.com/in/daniel-oliveira-a8844b169

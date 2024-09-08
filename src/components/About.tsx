@@ -24,7 +24,7 @@ const About = () => {
   const [isLargerThanMD] = useMediaQuery('(min-width: 48em)');
 
   return (
-    <Container maxW="3xl" id="about">
+    <Container maxW="4xl" id="about">
       <Stack
         as={Box}
         textAlign={'center'}

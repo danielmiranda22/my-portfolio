@@ -6,7 +6,6 @@ import {
   HStack,
   Stack,
   Text,
-  theme,
 } from '@chakra-ui/react';
 import SectionDivider from './SectionDivider';
 import ProfileData from '../data/ProfileData';
@@ -29,7 +28,7 @@ const Contact = () => {
   };
 
   return (
-    <Container maxW="3xl" id="contact">
+    <Container maxW="4xl" id="contact">
       <Stack
         as={Box}
         textAlign={'center'}

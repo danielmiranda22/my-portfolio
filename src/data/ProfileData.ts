@@ -17,8 +17,15 @@ const parseProfile = (mdContent: string) => {
     aboutExtraHangOut: '',
     skills: [] as string[],
     tools: [] as string[],
+    resumeHeaderOne: '',
+    resumeInfoOne: [] as string[],
+    resumeHeaderTwo: '',
+    resumeInfoTwo: [] as string[],
+    resumeHeaderThree: '',
+    resumeInfoThree: [] as string[],
     contactPhoneNumber: '',
     contactEmail: '',
+    contactAddress: '',
     contactLinkdin: '',
   };
 
@@ -80,10 +87,26 @@ const parseProfile = (mdContent: string) => {
             }
           }
           break;
+        case 'Resume':
+          i++;
+          profile.resumeHeaderOne = lines[++i].substring(2).trim();
+          while (lines[++i].startsWith('  ->')) {
+            profile.resumeInfoOne.push(lines[i].substring(4).trim());
+          }
+          profile.resumeHeaderTwo = lines[i].substring(2).trim();
+          while (lines[++i].startsWith('  ->')) {
+            profile.resumeInfoTwo.push(lines[i].substring(4).trim());
+          }
+          profile.resumeHeaderThree = lines[i].substring(2).trim();
+          while (lines[++i].startsWith('  ->')) {
+            profile.resumeInfoThree.push(lines[i].substring(4).trim());
+          }
+          break;
         case 'Contact':
           i++;
           profile.contactPhoneNumber = lines[++i].substring(2).trim();
           profile.contactEmail = lines[++i].substring(2).trim();
+          profile.contactAddress = lines[++i].substring(2).trim();
           profile.contactLinkdin = lines[++i].substring(2).trim();
           break;
         default:
@@ -112,8 +135,15 @@ const ProfileData = () => {
     aboutExtraHangOut: '',
     skills: [] as string[],
     tools: [] as string[],
+    resumeHeaderOne: '',
+    resumeInfoOne: [] as string[],
+    resumeHeaderTwo: '',
+    resumeInfoTwo: [] as string[],
+    resumeHeaderThree: '',
+    resumeInfoThree: [] as string[],
     contactPhoneNumber: '',
     contactEmail: '',
+    contactAddress: '',
     contactLinkdin: '',
   });
 

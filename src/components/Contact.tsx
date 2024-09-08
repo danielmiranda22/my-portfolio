@@ -46,10 +46,20 @@ const Contact = () => {
             {profile.contactEmail}
           </Text>
           <HStack spacing={4} justify="center">
-            <Circle border="1px" borderColor={colors['teal']} size="30px">
+            <Circle
+              backgroundColor={colors['teal']}
+              boxShadow="0 0 0 2px #fff,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05)"
+              size="30px"
+              cursor="pointer"
+            >
               <LuLinkedin onClick={goToLinkdin} />
             </Circle>
-            <Circle border="1px" borderColor={colors['teal']} size="30px">
+            <Circle
+              backgroundColor={colors['teal']}
+              boxShadow="0 0 0 2px #fff,inset 0 2px 0 rgba(0,0,0,.08),0 3px 0 4px rgba(0,0,0,.05)"
+              size="30px"
+              cursor="pointer"
+            >
               <LuMail onClick={goToEmail} />
             </Circle>
           </HStack>

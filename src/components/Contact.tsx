@@ -52,7 +52,7 @@ const Contact = () => {
               size="30px"
               cursor="pointer"
             >
-              <LuLinkedin onClick={goToLinkdin} />
+              <LuLinkedin onClick={goToLinkdin} color="white" />
             </Circle>
             <Circle
               backgroundColor={colors['teal']}
@@ -60,7 +60,7 @@ const Contact = () => {
               size="30px"
               cursor="pointer"
             >
-              <LuMail onClick={goToEmail} />
+              <LuMail onClick={goToEmail} color="white" />
             </Circle>
           </HStack>
         </Stack>

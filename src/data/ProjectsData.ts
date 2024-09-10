@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Badge from '../models/Badge';
 import Project from '../models/Project';
+import ProjectDomain from '../models/ProjectDomain';
 
 const parseProjects = (mdContent: string) => {
   const projects = [] as Project[];
@@ -10,12 +11,12 @@ const parseProjects = (mdContent: string) => {
     const line = lines[i];
 
     if (line.startsWith('#')) {
-      const images = [] as string[];
       const title = line.substring(2).trim();
       i++;
       const description = lines[++i].substring(2).trim();
       const image = lines[++i].match(/!\[(.*)\]\((.*)\)/)![2];
       const badges = [] as Badge[];
+      const projectsDomains = [] as ProjectDomain[];
 
       while (lines[++i] && !lines[i].startsWith('- Badges:')) {}
       while (lines[++i] && lines[i].startsWith('  - ')) {
@@ -25,11 +26,19 @@ const parseProjects = (mdContent: string) => {
         badges.push({ name: badgeName, colorScheme: badgeColor });
       }
 
+      while (lines[++i] && lines[i].startsWith('  - ')) {
+        const buttonLine = lines[i].substring(4).split('[');
+        const buttonText = buttonLine[0].trim();
+        const buttonHref = buttonLine[1].split(']')[0].trim();
+        projectsDomains.push({ text: buttonText, href: buttonHref });
+      }
+
       projects.push({
         image,
         title,
         description,
         badges,
+        projectsDomains,
       });
     }
   }

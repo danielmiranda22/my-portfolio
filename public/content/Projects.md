@@ -7,4 +7,4 @@
   - React [teal]
   - Chakra UI [green]
 - Buttons:
-  - Visit [https://game-finder-site-by-dano.vercel.app/]
+  - Visit [https://game-finder-by-dano.vercel.app/]

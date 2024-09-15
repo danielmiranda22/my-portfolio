@@ -8,7 +8,12 @@ const Projects = () => {
 
   return (
     <Container maxW="4xl" id="projects">
-      <Stack as={Box} textAlign="center" spacing={{ base: 8, md: 16 }} pb={20}>
+      <Stack
+        as={Box}
+        textAlign="center"
+        spacing={{ base: 8, md: 16 }}
+        pb={{ base: 20, md: 36 }}
+      >
         <Stack direction="row" align="center">
           <HStack mx={4}>
             <Text color={colors['teal']} fontWeight={800}>

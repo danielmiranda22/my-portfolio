@@ -26,6 +26,9 @@ interface Props {
 
 const ExperienceComp = ({ experience }: Props) => {
   const [isExpanded, setExpanded] = useState(false);
+  let collapseAttr;
+
+  if (!isExpanded) collapseAttr = { noOfLines: 5 };
 
   return (
     <Fade direction="up">
@@ -46,35 +49,21 @@ const ExperienceComp = ({ experience }: Props) => {
         </CardHeader>
         <CardBody>
           <Flex>
-            {isExpanded ? (
-              <List spacing={3}>
-                {experience.listItems.map((item, index) => (
-                  <ListItem key={index} textAlign="left">
-                    <ListIcon
-                      boxSize={4}
-                      as={FaChevronRight}
-                      color={colors['teal']}
-                    />
-                    {item}
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <List spacing={3} isTruncated={isExpanded} noOfLines={5}>
-                {experience.listItems.map((item, index) => (
-                  <ListItem key={index} textAlign="left">
-                    <ListIcon
-                      boxSize={4}
-                      as={FaChevronRight}
-                      color={colors['teal']}
-                    />
-                    {item}
-                  </ListItem>
-                ))}
-              </List>
-            )}
+            <List spacing={3} {...collapseAttr}>
+              {experience.listItems.map((item, index) => (
+                <ListItem key={index} textAlign="left">
+                  <ListIcon
+                    boxSize={4}
+                    as={FaChevronRight}
+                    color={colors['teal']}
+                  />
+                  {item}
+                </ListItem>
+              ))}
+            </List>
           </Flex>
           <Button
+            size="sm"
             mt={4}
             className="nav-btn"
             variant="solid"

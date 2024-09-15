@@ -48,7 +48,7 @@ const Resume = () => {
       <Stack
         as={Box}
         textAlign="left"
-        spacing={{ base: 8, md: 14 }}
+        spacing={{ base: 8, md: 16 }}
         pb={{ base: 20, md: 36 }}
       >
         <SectionDivider sectionNumber="04" sectionText="Resume" />
@@ -171,6 +171,7 @@ const Resume = () => {
 
         <Center>
           <Button
+            size="sm"
             onClick={downloadCV}
             width={'fit-content'}
             className="nav-btn"

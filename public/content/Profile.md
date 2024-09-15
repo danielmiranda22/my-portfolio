@@ -29,9 +29,9 @@
 - Dotnet
 - Xamarin
 - JavaScript
-- TypeScript
 - HTML
 - CSS
+- TypeScript
 - reactJS
 - SQL
 
@@ -49,7 +49,7 @@
 ## Resume
 
 - Web Developement
-  -> Collaborated on the development of several web applications; currently maintaining and implementing new features.
+  -> Collaborated on the development of several web applications, including an HR platform, an Access Management System, and a Ticketing website. Currently maintaining and implementing new features.
 - Mobile Developement
   -> Developed an access control and time clocking application.
   -> Contributed to the design and development of a scanner application for ticket validation.

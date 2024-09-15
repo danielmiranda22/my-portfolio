@@ -28,7 +28,7 @@ const About = () => {
       <Stack
         as={Box}
         textAlign={'center'}
-        spacing={{ base: 8, md: 14 }}
+        spacing={{ base: 8, md: 16 }}
         pb={{ base: 20, md: 36 }}
       >
         <SectionDivider sectionNumber="01" sectionText="About" />

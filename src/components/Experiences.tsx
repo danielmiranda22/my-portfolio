@@ -12,7 +12,7 @@ const Experiences = () => {
         as={Box}
         textAlign="center"
         spacing={{ base: 8, md: 16 }}
-        pb={{ base: 20, md: 20 }}
+        pb={{ base: 20, md: 36 }}
       >
         <SectionDivider sectionNumber="03" sectionText="Experiences" />
 

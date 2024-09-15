@@ -38,6 +38,8 @@ const ProjectComponent = ({ project }: Props) => {
           <HStack py={2}>
             {project.projectsDomains.map((projectDomain) => (
               <Button
+                key={project.title}
+                size="sm"
                 leftIcon={<LuArrowUpRight />}
                 className="nav-btn"
                 onClick={() => visitGameHubProject(projectDomain.href)}

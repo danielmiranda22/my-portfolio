@@ -21,6 +21,7 @@ import ThemeButton from './ThemeButton';
 import Home from './Home';
 import colors from '../utilities/colors';
 import { SyntheticEvent, useState } from 'react';
+import { theme } from '@chakra-ui/react';
 
 const NavItems = ['About', 'Experience', 'Projects', 'Resume', 'Contact'];
 const NavBar = () => {
@@ -68,7 +69,7 @@ const NavBar = () => {
 
   return (
     <Flex
-      bg={useColorModeValue(colors['gray100'], colors['gray900'])}
+      bg={useColorModeValue('gray.200', 'gray.900')}
       justifyContent="center"
       direction={'row'}
       zIndex="sticky"

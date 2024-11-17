@@ -31,47 +31,29 @@ const Skill = ({ skill }: Props) => {
   return (
     <Card
       className="simple-card"
-      variant="outline"
-      size="md"
+      variant="elevated"
+      size="sm"
       borderColor={colors['teal']}
     >
       <CardBody>
         {(() => {
           switch (skill) {
-            case 'C#':
-              return <SiCsharp size="40px" />;
-            case 'Dotnet':
-              return <SiDotnet size="40px" />;
-            case 'Xamarin':
-              return <SiXamarin size="40px" />;
-            case 'JavaScript':
-              return <FaJs size="40px" />;
-            case 'TypeScript':
-              return <SiTypescript size="40px" />;
-            case 'HTML':
-              return <SiHtml5 size="40px" />;
-            case 'CSS':
-              return <SiCss3 size="40px" />;
-            case 'reactJS':
-              return <RiReactjsFill size="40px" />;
-            case 'SQL':
-              return <SiMicrosoftsqlserver size="40px" />;
             case 'VS':
-              return <SiVisualstudio size="40px" />;
+              return <SiVisualstudio size="30px" />;
             case 'Postman':
-              return <SiPostman size="40px" />;
+              return <SiPostman size="30px" />;
             case 'Windows':
-              return <SiWindows size="40px" />;
+              return <SiWindows size="30px" />;
             case 'Discord':
-              return <SiDiscord size="40px" />;
+              return <SiDiscord size="30px" />;
             case 'Mac':
-              return <SiMacos size="40px" />;
+              return <SiMacos size="30px" />;
             case 'StackOverflow':
-              return <TbBrandStackoverflow size="40px" />;
+              return <TbBrandStackoverflow size="30px" />;
             case 'Git':
-              return <TbBrandGit size="40px" />;
+              return <TbBrandGit size="30px" />;
             case 'Azure':
-              return <SiAzuredevops size="40px" />;
+              return <SiAzuredevops size="30px" />;
             default:
               break;
           }

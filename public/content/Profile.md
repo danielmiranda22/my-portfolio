@@ -4,36 +4,32 @@
 
 ## Hero
 
-- Hi Everyone!
-- My name is
-- Daniel Oliveira.
-- I'm a software developer
-- I am a software enthusiast who loves creating high-quality software and digital experiences.
+- First of all, thank you for checking out my portfolio and wanting to know more about me! I’m Daniel Oliveira, a software developer based in Porto, Portugal. I currently work at Innux Technologies, where I build a variety of solutions, from desktop to web applications and everything in between.
 
 ## About
 
-- After exploring various career paths, I discovered a passion for programming.
-- I'm proficient in C# and JavaScript, with a focus on building web and mobile applications
-- I'm committed to continuously deepening my knowledge, particularly in modern JavaScript libraries and frameworks like React.js and Next.js.
+- From building desktop and mobile apps to APIs and robust web applications, I love creating innovative solutions. I strive to stay up-to-date with the latest technologies and am committed to continuously deepening my knowledge. A big fan of .NET and JavaScript, I’m currently working with the following technologies and platforms:
+
+## TechStack
+
+- .NET
+- ASP.NET
+- JavaScript
+- jQuery
+- Xamarin
+- .Net MAUI
+- Azure
 
 ## AboutExtra
+
+- That being said, I’m always open to exploring new technologies. Take this portfolio, for example. It's built with React and TypeScript, both of which are technologies I hadn't worked with before.
+
+## MyActivities
 
 - Apart from coding, some other activities that I love to do!
 - Travel
 - Play Sports
 - Hang out with friends
-
-## Skills
-
-- C#
-- Dotnet
-- Xamarin
-- JavaScript
-- HTML
-- CSS
-- TypeScript
-- reactJS
-- SQL
 
 ## Tools
 

@@ -7,23 +7,14 @@ const Projects = () => {
   const projects = ProjectsData();
 
   return (
-    <Container maxW="4xl" id="projects">
+    <Container maxW="3xl" id="projects">
       <Stack
         as={Box}
         textAlign="center"
-        spacing={{ base: 8, md: 16 }}
+        spacing={8}
         pb={{ base: 20, md: 36 }}
+        pt={{ base: 100, md: 20 }}
       >
-        <Stack direction="row" align="center">
-          <HStack mx={4}>
-            <Text color={colors['teal']} fontWeight={800}>
-              {' '}
-              03
-            </Text>
-            <Text fontWeight={800}>Projects</Text>
-          </HStack>
-          <Divider color={colors['gray600']} />
-        </Stack>
         <Stack px={4} spacing={4}>
           {projects.map((project) => (
             <ProjectComponent project={project} key={project.title} />

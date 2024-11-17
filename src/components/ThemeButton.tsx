@@ -5,8 +5,12 @@ const ThemeButton = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Button variant="solid" onClick={toggleColorMode}>
-      {colorMode === 'light' ? <LuMoonStar /> : <LuSun />}
+    <Button variant="unstyled" onClick={toggleColorMode} className="nav-btn">
+      {colorMode === 'light' ? (
+        <LuMoonStar className="spin" />
+      ) : (
+        <LuSun className="spin" />
+      )}
     </Button>
   );
 };

@@ -1,4 +1,4 @@
-import { Box, Button, Heading, HStack, Stack, Text } from '@chakra-ui/react';
+import { Button, Text } from '@chakra-ui/react';
 import ProfileData from '../data/ProfileData';
 import colors from '../utilities/colors';
 import { SyntheticEvent } from 'react';

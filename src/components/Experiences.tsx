@@ -7,15 +7,14 @@ const Experiences = () => {
   const experiences = ExperiencesData();
 
   return (
-    <Container maxW="4xl" id="experience">
+    <Container maxW="3xl" id="experience">
       <Stack
         as={Box}
         textAlign="center"
-        spacing={{ base: 8, md: 16 }}
+        spacing={8}
         pb={{ base: 20, md: 36 }}
+        pt={{ base: 100, md: 20 }}
       >
-        <SectionDivider sectionNumber="03" sectionText="Experiences" />
-
         <Stack px={4} spacing={4}>
           {experiences.map((exp) => (
             <ExperienceComp experience={exp} key={exp.company} />

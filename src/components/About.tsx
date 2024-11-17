@@ -4,149 +4,97 @@ import {
   Divider,
   Flex,
   Heading,
-  HStack,
   Image,
+  List,
+  ListIcon,
+  ListItem,
   Stack,
   Text,
   useMediaQuery,
   VStack,
 } from '@chakra-ui/react';
 import colors from '../utilities/colors';
-import SectionDivider from './SectionDivider';
 import ProfileData from '../data/ProfileData';
-import profileIMG from '../assets/profileIMG.webp';
+import devImg from '../assets/dev.svg';
 import { LuCoffee, LuPlaneTakeoff } from 'react-icons/lu';
 import { GiWeightLiftingUp } from 'react-icons/gi';
+import { GoDotFill } from 'react-icons/go';
 import Skill from './Skill';
 
 const About = () => {
   const profile = ProfileData();
-  const [isLargerThanMD] = useMediaQuery('(min-width: 48em)');
 
   return (
-    <Container maxW="4xl" id="about">
+    <Container maxW="3xl" id="about">
       <Stack
         as={Box}
-        textAlign={'center'}
-        spacing={{ base: 8, md: 16 }}
+        textAlign="left"
+        spacing={8}
         pb={{ base: 20, md: 36 }}
+        pt={{ base: 100, md: 20 }}
       >
-        <SectionDivider sectionNumber="01" sectionText="About" />
-
-        <Heading>
-          BRIEF INRODUCTION <Text color={`${colors['teal']}`}>OF MYSELF</Text>
-        </Heading>
-
-        <Flex
-          direction="row"
-          flexWrap={isLargerThanMD ? 'nowrap' : 'wrap'}
-          justifyContent="center"
-        >
-          <VStack spacing={4}>
-            <Text
-              as="span"
-              fontSize="xl"
-              color={colors['gray600']}
-              textAlign="left"
-            >
-              {profile.aboutTopicOne}
-            </Text>
-            <Text
-              as="span"
-              fontSize="xl"
-              color={colors['gray600']}
-              textAlign="left"
-            >
-              {profile.aboutTopicTwo}
-            </Text>
-            <Text
-              as="span"
-              fontSize="xl"
-              color={colors['gray600']}
-              textAlign="left"
-            >
-              {profile.aboutTopicThree}
-            </Text>
-          </VStack>
-
-          <Box minW={'fit-content'}>
-            <Image
-              rounded="full"
-              boxSize="250px"
-              objectFit="cover"
-              src={profileIMG}
-              alt={profile.logo}
-            />
-          </Box>
-        </Flex>
-
-        <Divider />
+        <Text fontSize="md">{profile.heroCumpliment}</Text>
 
         <VStack spacing={4} alignItems="start">
-          <Text
-            as="span"
-            fontSize="xl"
-            color={colors['gray600']}
-            textAlign="left"
-          >
-            {profile.aboutExtraTitle}
+          <Text as="span" fontSize="md" textAlign="left">
+            {profile.aboutActivitiesTitle}
           </Text>
-          <HStack>
-            <LuPlaneTakeoff color={colors['teal']} />
-            <Text
-              as="span"
-              fontSize="xl"
-              color={colors['gray600']}
-              textAlign="left"
-            >
-              {profile.aboutExtraTravel}
-            </Text>
-          </HStack>
-          <HStack>
-            <GiWeightLiftingUp color={colors['teal']} />
-            <Text
-              as="span"
-              fontSize="xl"
-              color={colors['gray600']}
-              textAlign="left"
-            >
-              {profile.aboutExtraPlaySports}
-            </Text>
-          </HStack>
-          <HStack>
-            <LuCoffee color={colors['teal']} />
-            <Text
-              as="span"
-              fontSize="xl"
-              color={colors['gray600']}
-              textAlign="left"
-            >
-              {profile.aboutExtraHangOut}
-            </Text>
-          </HStack>
+
+          <List width="100%" textAlign="start" spacing={4}>
+            <ListItem>
+              <ListIcon as={LuPlaneTakeoff} color={colors['teal']} />
+              {profile.aboutActivitiesTravel}
+            </ListItem>
+            <ListItem>
+              <ListIcon as={GiWeightLiftingUp} color={colors['teal']} />
+              {profile.aboutActivitiesPlaySports}
+            </ListItem>
+            <ListItem>
+              <ListIcon as={LuCoffee} color={colors['teal']} />
+              {profile.aboutActivitiesHangOut}
+            </ListItem>
+          </List>
         </VStack>
 
-        <Heading>
-          Professional{' '}
-          <Text color={`${colors['teal']}`} as="strong">
-            Skillset
+        <Box minW={'fit-content'} alignSelf="center">
+          <Image
+            rounded="full"
+            boxSize="350px"
+            objectFit="cover"
+            src={devImg}
+          />
+        </Box>
+
+        <Heading size="lg">
+          Tech{' '}
+          <Text as="span" color={`${colors['teal']}`}>
+            Stack
           </Text>
         </Heading>
 
-        <Flex direction="row" gap={5} justifyContent="center" wrap="wrap">
-          {profile.skills.map((skill) => (
-            <Skill skill={skill} key={skill} />
-          ))}
-        </Flex>
+        <VStack spacing={4}>
+          <Text fontSize="md">{profile.aboutBrief}</Text>
 
-        <Heading>
+          <List width="100%" textAlign="start" spacing={3}>
+            {profile.tech.map((tech, index) => (
+              <ListItem key={index}>
+                <ListIcon as={GoDotFill} color={colors['teal']} />
+                {tech}
+              </ListItem>
+            ))}
+          </List>
+
+          <Text fontSize="md">{profile.aboutExtra}</Text>
+        </VStack>
+
+        <Heading size="lg">
           My{' '}
           <Text color={`${colors['teal']}`} as="strong">
             Tools
           </Text>
         </Heading>
 
-        <Flex direction="row" gap={5} justifyContent="center" wrap="wrap">
+        <Flex direction="row" gap={5} justifyContent="start" wrap="wrap">
           {profile.tools.map((skill) => (
             <Skill skill={skill} key={skill} />
           ))}

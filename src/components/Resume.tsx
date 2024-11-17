@@ -5,6 +5,7 @@ import {
   Container,
   Stack,
   Text,
+  theme,
   useColorMode,
   VStack,
 } from '@chakra-ui/react';
@@ -39,23 +40,25 @@ const Resume = () => {
 
   const timeLineCardStyle = {
     backgroundColor:
-      colorMode === 'light' ? colors['gray100'] : colors['gray900'],
-    color: colorMode === 'light' ? colors['gray900'] : colors['gray100'],
+      colorMode === 'light' ? theme.colors.gray[200] : theme.colors.gray[900],
+    color:
+      colorMode === 'light' ? theme.colors.gray[900] : theme.colors.gray[200],
   };
 
   return (
-    <Container maxW="4xl" id="resume">
+    <Container maxW="3xl" id="resume">
       <Stack
         as={Box}
         textAlign="left"
-        spacing={{ base: 8, md: 16 }}
+        spacing={8}
         pb={{ base: 20, md: 36 }}
+        pt={{ base: 100, md: 20 }}
       >
-        <SectionDivider sectionNumber="04" sectionText="Resume" />
-
         <VerticalTimeline
           lineColor={
-            colorMode == 'light' ? colors['gray100'] : colors['gray900']
+            colorMode == 'light'
+              ? theme.colors.gray[200]
+              : theme.colors.gray[900]
           }
         >
           <VerticalTimelineElement
@@ -63,7 +66,9 @@ const Resume = () => {
             contentStyle={timeLineCardStyle}
             contentArrowStyle={{
               borderRight: `7px solid ${
-                colorMode === 'light' ? colors['gray100'] : colors['gray900']
+                colorMode == 'light'
+                  ? theme.colors.gray[200]
+                  : theme.colors.gray[900]
               }`,
             }}
             iconClassName="ic-size"
@@ -74,7 +79,7 @@ const Resume = () => {
               <Text
                 fontSize="2xl"
                 as="span"
-                color={colors['gray500']}
+                color={theme.colors.gray[500]}
                 className="vertical-timeline-element-title"
               >
                 {profile.resumeHeaderOne}{' '}
@@ -84,7 +89,6 @@ const Resume = () => {
                   key={index}
                   fontSize="lg"
                   as="span"
-                  color={colors['gray600']}
                   className="vertical-timeline-element-title"
                 >
                   {info}
@@ -98,7 +102,9 @@ const Resume = () => {
             contentStyle={timeLineCardStyle}
             contentArrowStyle={{
               borderRight: `7px solid ${
-                colorMode === 'light' ? colors['gray100'] : colors['gray900']
+                colorMode == 'light'
+                  ? theme.colors.gray[200]
+                  : theme.colors.gray[900]
               }`,
             }}
             iconClassName="ic-size"
@@ -109,7 +115,7 @@ const Resume = () => {
               <Text
                 fontSize="2xl"
                 as="span"
-                color={colors['gray500']}
+                color={theme.colors.gray[500]}
                 className="vertical-timeline-element-title"
               >
                 {profile.resumeHeaderTwo}{' '}
@@ -120,7 +126,6 @@ const Resume = () => {
                   key={index}
                   fontSize="lg"
                   as="span"
-                  color={colors['gray600']}
                   className="vertical-timeline-element-title"
                 >
                   {info}
@@ -134,7 +139,9 @@ const Resume = () => {
             contentStyle={timeLineCardStyle}
             contentArrowStyle={{
               borderRight: `7px solid ${
-                colorMode === 'light' ? colors['gray100'] : colors['gray900']
+                colorMode == 'light'
+                  ? theme.colors.gray[200]
+                  : theme.colors.gray[900]
               }`,
             }}
             iconStyle={{
@@ -148,7 +155,7 @@ const Resume = () => {
               <Text
                 fontSize="2xl"
                 as="span"
-                color={colors['gray500']}
+                color={theme.colors.gray[500]}
                 className="vertical-timeline-element-title"
               >
                 {profile.resumeHeaderThree}{' '}
@@ -159,7 +166,6 @@ const Resume = () => {
                   key={index}
                   fontSize="lg"
                   as="span"
-                  color={colors['gray600']}
                   className="vertical-timeline-element-title"
                 >
                   {info}
@@ -174,6 +180,7 @@ const Resume = () => {
             size="sm"
             onClick={downloadCV}
             width={'fit-content'}
+            _hover={{ color: 'teal' }}
             className="nav-btn"
             leftIcon={<FaDownload />}
             variant="solid"

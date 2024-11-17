@@ -4,18 +4,13 @@ const parseProfile = (mdContent: string) => {
   const profile = {
     logo: '',
     heroCumpliment: '',
-    heroNameIntro: '',
-    heroName: '',
-    heroRole: '',
-    heroDescription: '',
-    aboutTopicOne: '',
-    aboutTopicTwo: '',
-    aboutTopicThree: '',
-    aboutExtraTitle: '',
-    aboutExtraTravel: '',
-    aboutExtraPlaySports: '',
-    aboutExtraHangOut: '',
-    skills: [] as string[],
+    aboutBrief: '',
+    tech: [] as string[],
+    aboutExtra: '',
+    aboutActivitiesTitle: '',
+    aboutActivitiesTravel: '',
+    aboutActivitiesPlaySports: '',
+    aboutActivitiesHangOut: '',
     tools: [] as string[],
     resumeHeaderOne: '',
     resumeInfoOne: [] as string[],
@@ -45,35 +40,34 @@ const parseProfile = (mdContent: string) => {
         case 'Hero':
           i++;
           profile.heroCumpliment = lines[++i].substring(2).trim();
-          profile.heroNameIntro = lines[++i].substring(2).trim();
-          profile.heroName = lines[++i].substring(2).trim();
-          profile.heroRole = lines[++i].substring(2).trim();
-          profile.heroDescription = lines[++i].substring(2).trim();
           break;
         case 'About':
           i++;
-          profile.aboutTopicOne = lines[++i].substring(2).trim();
-          profile.aboutTopicTwo = lines[++i].substring(2).trim();
-          profile.aboutTopicThree = lines[++i].substring(2).trim();
+          profile.aboutBrief = lines[++i].substring(2).trim();
           break;
-        case 'AboutExtra':
-          i++;
-          profile.aboutExtraTitle = lines[++i].substring(2).trim();
-          profile.aboutExtraTravel = lines[++i].substring(2).trim();
-          profile.aboutExtraPlaySports = lines[++i].substring(2).trim();
-          profile.aboutExtraHangOut = lines[++i].substring(2).trim();
-          break;
-        case 'Skills':
+        case 'TechStack':
           i++;
           for (let j = i; j < lines.length; j++) {
             const line = lines[j];
             if (line.startsWith('- ')) {
-              profile.skills.push(lines[j].substring(2).trim());
+              profile.tech.push(lines[j].substring(2).trim());
             }
             if (line.startsWith('## ')) {
               break;
             }
           }
+          break;
+          break;
+        case 'AboutExtra':
+          i++;
+          profile.aboutExtra = lines[++i].substring(2).trim();
+          break;
+        case 'MyActivities':
+          i++;
+          profile.aboutActivitiesTitle = lines[++i].substring(2).trim();
+          profile.aboutActivitiesTravel = lines[++i].substring(2).trim();
+          profile.aboutActivitiesPlaySports = lines[++i].substring(2).trim();
+          profile.aboutActivitiesHangOut = lines[++i].substring(2).trim();
           break;
         case 'Tools':
           i++;
@@ -122,18 +116,13 @@ const ProfileData = () => {
   const [profile, setProfile] = useState({
     logo: '',
     heroCumpliment: '',
-    heroNameIntro: '',
-    heroName: '',
-    heroRole: '',
-    heroDescription: '',
-    aboutTopicOne: '',
-    aboutTopicTwo: '',
-    aboutTopicThree: '',
-    aboutExtraTitle: '',
-    aboutExtraTravel: '',
-    aboutExtraPlaySports: '',
-    aboutExtraHangOut: '',
-    skills: [] as string[],
+    aboutBrief: '',
+    aboutExtra: '',
+    tech: [] as string[],
+    aboutActivitiesTitle: '',
+    aboutActivitiesTravel: '',
+    aboutActivitiesPlaySports: '',
+    aboutActivitiesHangOut: '',
     tools: [] as string[],
     resumeHeaderOne: '',
     resumeInfoOne: [] as string[],

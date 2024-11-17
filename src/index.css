@@ -1,7 +1,29 @@
+:root {
+  --teal: rgb(0, 128, 128);
+}
+
 .nav-btn {
   text-decoration: none !important;
 }
 
 .nav-btn:hover {
-  color: #38b2ac;
+  color: var(--teal);
+}
+
+.base-icon {
+  font-size: 20px;
+}
+
+.rotate:hover {
+  cursor: pointer;
+  rotate: 6deg;
+  color: var(--teal);
+}
+
+.spin {
+  transition: transform 0.3s ease-in-out;
+}
+
+.spin:hover {
+  transform: rotate(45deg);
 }

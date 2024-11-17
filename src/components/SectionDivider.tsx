@@ -1,4 +1,4 @@
-import { Stack, HStack, Divider, Text } from '@chakra-ui/react';
+import { Stack, HStack, Divider, Text, Container } from '@chakra-ui/react';
 import React from 'react';
 import colors from '../utilities/colors';
 
@@ -9,15 +9,15 @@ interface Props {
 
 const SectionDivider = ({ sectionNumber, sectionText }: Props) => {
   return (
-    <Stack align="center" direction="row">
-      <HStack mx={4}>
+    <Container maxW="3xl">
+      <HStack>
         <Text color={colors['teal']} fontWeight={600}>
           {sectionNumber}
         </Text>
         <Text fontWeight={600}>{sectionText}</Text>
       </HStack>
-      <Divider color={colors['gray600']} />
-    </Stack>
+      <Divider />
+    </Container>
   );
 };
 

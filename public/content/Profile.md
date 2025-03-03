@@ -1,6 +1,6 @@
 ## Logo
 
-- D O
+- DO
 
 ## Hero
 

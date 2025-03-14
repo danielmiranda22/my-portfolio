@@ -1,6 +1,7 @@
 ## Game Hub
 
 - Find any game from any genre. A game hub project where you can discover hundreds of games, check their scores, and see which platforms they are available on.
+- Side note: Built to dive into React state management, API calls, and handling dynamic data like a pro.
 - ![600X200](../assets/game_finder_poster.webp)
 - Badges:
   - TYPESCRIPT [blue]

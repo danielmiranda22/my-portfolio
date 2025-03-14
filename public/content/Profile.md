@@ -22,14 +22,14 @@
 
 ## AboutExtra
 
-- That being said, I’m always open to exploring new technologies. Take this portfolio, for example. It's built with React and TypeScript, both of which are technologies I hadn't worked with before.
+- That being said, I’m always open to exploring new technologies. Take this portfolio, for example. It's built with React 🚀 and TypeScript, both of which are technologies I hadn't worked with before.
 
 ## MyActivities
 
 - Apart from coding, some other activities that I love to do!
+- Sports
 - Travel
-- Play Sports
-- Hang out with friends
+- Tracking
 
 ## Tools
 

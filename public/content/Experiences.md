@@ -8,6 +8,7 @@
   - .NET [blue]
   - JAVASCRIPT [yellow]
   - HTML & CSS [orange]
+  - Bootstrap [red]
   - SQL [gray]
 - List Bullets:
   - Collaborated in the development of various commercial backend services for ticketing, access control and clocking.

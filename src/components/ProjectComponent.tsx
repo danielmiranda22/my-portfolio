@@ -34,6 +34,9 @@ const ProjectComponent = ({ project }: Props) => {
         <CardBody textAlign="left">
           <Heading size="md">{project.title}</Heading>
           <Text py={2}>{project.description}</Text>
+          <Text py={2} fontSize="small">
+            {project.sideNote}
+          </Text>
 
           <HStack py={2}>
             {project.projectsDomains.map((projectDomain) => (

@@ -5,6 +5,7 @@ export default interface Project {
   image: string;
   title: string;
   description: string;
+  sideNote: string;
   badges: Badge[];
   projectsDomains: ProjectDomain[];
 }

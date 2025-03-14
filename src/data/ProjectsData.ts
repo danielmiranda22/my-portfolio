@@ -14,6 +14,7 @@ const parseProjects = (mdContent: string) => {
       const title = line.substring(2).trim();
       i++;
       const description = lines[++i].substring(2).trim();
+      const sideNote = lines[++i].substring(2).trim();
       const image = lines[++i].match(/!\[(.*)\]\((.*)\)/)![2];
       const badges = [] as Badge[];
       const projectsDomains = [] as ProjectDomain[];
@@ -37,6 +38,7 @@ const parseProjects = (mdContent: string) => {
         image,
         title,
         description,
+        sideNote,
         badges,
         projectsDomains,
       });

@@ -16,8 +16,8 @@ import {
 import colors from '../utilities/colors';
 import ProfileData from '../data/ProfileData';
 import devImg from '../assets/dev.svg';
-import { LuCoffee, LuPlaneTakeoff } from 'react-icons/lu';
-import { GiWeightLiftingUp } from 'react-icons/gi';
+import { LuPlaneTakeoff } from 'react-icons/lu';
+import { GiHiking, GiWeightLiftingUp } from 'react-icons/gi';
 import { GoDotFill } from 'react-icons/go';
 import Skill from './Skill';
 
@@ -42,15 +42,15 @@ const About = () => {
 
           <List width="100%" textAlign="start" spacing={4}>
             <ListItem>
-              <ListIcon as={LuPlaneTakeoff} color={colors['teal']} />
+              <ListIcon as={GiWeightLiftingUp} color={colors['teal']} />
               {profile.aboutActivitiesTravel}
             </ListItem>
             <ListItem>
-              <ListIcon as={GiWeightLiftingUp} color={colors['teal']} />
+              <ListIcon as={LuPlaneTakeoff} color={colors['teal']} />
               {profile.aboutActivitiesPlaySports}
             </ListItem>
             <ListItem>
-              <ListIcon as={LuCoffee} color={colors['teal']} />
+              <ListIcon as={GiHiking} color={colors['teal']} />
               {profile.aboutActivitiesHangOut}
             </ListItem>
           </List>

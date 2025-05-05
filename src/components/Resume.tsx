@@ -15,7 +15,6 @@ import {
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import SectionDivider from './SectionDivider';
 import colors from '../utilities/colors';
 import ProfileData from '../data/ProfileData';
 import { FaDownload } from 'react-icons/fa';

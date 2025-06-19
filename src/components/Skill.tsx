@@ -1,27 +1,13 @@
 import { Card, CardBody } from '@chakra-ui/react';
-import { FaJs } from 'react-icons/fa';
-import { RiReactjsFill } from 'react-icons/ri';
 import {
   SiAzuredevops,
-  SiCsharp,
-  SiCss3,
   SiDiscord,
-  SiDotnet,
-  SiHtml5,
-  SiInsomnia,
   SiMacos,
-  SiMicrosoftsqlserver,
   SiPostman,
-  SiTypescript,
   SiVisualstudio,
   SiWindows,
-  SiXamarin,
 } from 'react-icons/si';
-import {
-  TbBrandGit,
-  TbBrandGithub,
-  TbBrandStackoverflow,
-} from 'react-icons/tb';
+import { TbBrandGit, TbBrandStackoverflow } from 'react-icons/tb';
 import colors from '../utilities/colors';
 interface Props {
   skill: string;
@@ -30,6 +16,7 @@ interface Props {
 const Skill = ({ skill }: Props) => {
   return (
     <Card
+      title={skill}
       className="simple-card"
       variant="elevated"
       size="sm"

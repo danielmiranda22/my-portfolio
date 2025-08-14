@@ -18,7 +18,7 @@ const Home = ({ size, onClick }: Props) => {
       fontSize={size}
     >
       {profile.logo}
-      <Text as="span" color={colors['teal']}>
+      <Text as="span" color={colors['teal']} onClick={onClick} className="Hero">
         .
       </Text>
     </Button>

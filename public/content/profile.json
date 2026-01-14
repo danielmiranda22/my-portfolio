@@ -27,18 +27,31 @@
     "Git",
     "Azure"
   ],
-  "resumeHeaderOne": "Web Development",
+  "resumeHeaderOne": "Backend & Full-Stack Development",
   "resumeInfoOne": [
-    "Collaborated on the development of several web applications, including an HR platform, an Access Management System, and a Ticketing website.  Currently maintaining and implementing new features."
+    "Building backend services and APIs with C# and .NET Core/MVC",
+    "Database design and queries with SQL Server, LINQ, and ADO.NET",
+    "Implementing custom permission systems with user profiles and access controls",
+    "Developing business logic for HR, access control, and ticketing systems",
+    "Working with ASP.NET Web Forms and legacy application maintenance"
   ],
-  "resumeHeaderTwo": "Mobile Development",
+
+  "resumeHeaderTwo": "Frontend & Mobile Development",
   "resumeInfoTwo": [
-    "Developed an access control and time clocking application.",
-    "Contributed to the design and development of a scanner application for ticket validation."
+    "Creating responsive web interfaces with JavaScript, HTML, CSS, and Bootstrap",
+    "Building cross-platform mobile apps with Xamarin and .NET MAUI",
+    "Integrating frontend with .NET MVC backend and REST APIs",
+    "Developing Windows desktop applications (console and GUI)",
+    "Learning modern frontend with React and TypeScript"
   ],
-  "resumeHeaderThree": "Desktop Development",
+
+  "resumeHeaderThree": "Development Practices & Tools",
   "resumeInfoThree": [
-    "Collaborated on the development of various Windows applications, focusing on maintaining legacy systems."
+    "Version control with Git and Azure DevOps workflows",
+    "Agile development with sprint planning and code reviews",
+    "API testing and debugging with Postman",
+    "Exposure to Domain-Driven Design and Test-Driven Development concepts",
+    "Working across .NET Framework, .NET 6.0, 7.0, and 8.0"
   ],
   "contactPhoneNumber": "(+351) 912 012 095",
   "contactEmail": "danmiranda227@gmail.com",

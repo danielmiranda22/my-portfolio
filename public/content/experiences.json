@@ -16,12 +16,12 @@
       { "name": "SQL", "colorScheme": "gray" }
     ],
     "listItems": [
-      "Developed a complaint management system (whistleblower channel) for the HR platform, handling sensitive data with proper access controls and compliance requirements.",
-      "Implemented custom Tag Helpers for role-based access control, validating user permissions against application profiles and license restrictions.",
-      "Collaborated on the development of a platform for attendance, access management, and HR management (currently maintaining and implementing new features).",
-      "Developed several mobile applications using Xamarin and . NET MAUI framework (currently maintaining).",
-      "Collaborated in the development of commercial backend services for ticketing, access control, and time-tracking systems.",
-      "Provided support and maintenance for legacy applications."
+      "Developed a complaint management system (whistleblower channel) with secure data handling, role-based access controls, and audit logging for compliance.",
+      "Implemented custom ASP.NET Tag Helpers for authorization logic, validating user permissions and enforcing license-based feature restrictions.",
+      "Built and maintained an HR management platform (.NET MVC) covering attendance tracking, access control, asset management, and workforce administration.",
+      "Developed and maintained cross-platform mobile applications using Xamarin and .NET MAUI for Android, focusing on access control and time-tracking features.",
+      "Contributed to backend services (.NET Core) for commercial ticketing, access management, and employee clocking systems.",
+      "Maintained legacy ASP.NET Web Forms applications, ensuring stability and implementing incremental improvements."
     ]
   }
 ]

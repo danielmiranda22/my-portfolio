@@ -8,7 +8,7 @@ import {
   SiWindows,
 } from 'react-icons/si';
 import { TbBrandGit, TbBrandStackoverflow } from 'react-icons/tb';
-import colors from '../utilities/colors';
+
 interface Props {
   skill: string;
 }
@@ -20,7 +20,7 @@ const Skill = ({ skill }: Props) => {
       className="simple-card"
       variant="elevated"
       size="sm"
-      borderColor={colors['teal']}
+      borderColor="brand.500"
     >
       <CardBody>
         {(() => {

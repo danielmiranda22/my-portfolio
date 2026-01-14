@@ -1,6 +1,5 @@
 import { Button, Text } from '@chakra-ui/react';
 import ProfileData from '../data/ProfileData';
-import colors from '../utilities/colors';
 import { SyntheticEvent } from 'react';
 
 interface Props {
@@ -19,7 +18,7 @@ const Home = ({ size, onClick }: Props) => {
       fontSize={size}
     >
       {profile?.logo || 'DO'}
-      <Text as="span" color={colors['teal']} onClick={onClick} className="Hero">
+      <Text as="span" color="brand.500" onClick={onClick} className="Hero">
         .
       </Text>
     </Button>

@@ -11,7 +11,6 @@ import {
 } from '@chakra-ui/react';
 import { Fade } from 'react-awesome-reveal';
 import Project from '../models/Project';
-import colors from '../utilities/colors';
 import { LuArrowBigUp, LuArrowUpRight, LuMail } from 'react-icons/lu';
 import { FaGithub } from 'react-icons/fa';
 

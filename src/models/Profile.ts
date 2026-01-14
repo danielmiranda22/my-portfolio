@@ -1,5 +1,6 @@
 export default interface Profile {
   logo: string;
+  title: string;
   heroCumpliment: string;
   aboutBrief: string;
   tech: string[];

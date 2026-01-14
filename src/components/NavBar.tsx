@@ -1,7 +1,5 @@
 import {
-  Box,
   Button,
-  Center,
   Container,
   Drawer,
   DrawerBody,
@@ -19,135 +17,154 @@ import {
 import { CiMenuFries } from 'react-icons/ci';
 import ThemeButton from './ThemeButton';
 import Home from './Home';
-import colors from '../utilities/colors';
-import { SyntheticEvent, useState } from 'react';
-import { theme } from '@chakra-ui/react';
+import { SyntheticEvent } from 'react';
 
 const NavItems = ['About', 'Experience', 'Projects', 'Resume', 'Contact'];
+
 const NavBar = () => {
   const [isLargerThanMD] = useMediaQuery('(min-width: 48em)');
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const navBg = useColorModeValue('whiteAlpha.800', 'gray.900');
+  const borderColor = useColorModeValue('gray.200', 'gray. 700');
 
   const goToTheSpecificSection = (
     e: SyntheticEvent,
     item: string | undefined
   ) => {
-    if ((e.target as Element).classList.contains('Hero')) {
-      document.querySelector('#hero')?.scrollIntoView({ behavior: 'smooth' });
-      window.history.pushState('object or string', 'Title', '/' + '');
-      return;
-    }
+    if (isOpen) onClose();
 
-    if ((e.target as Element).classList.contains('About')) {
-      document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' });
-    }
+    const target = e.target as Element;
+    const sectionMap: Record<string, string> = {
+      Hero: '#hero',
+      About: '#about',
+      Experience: '#experience',
+      Projects: '#projects',
+      Resume: '#resume',
+      Contact: '#contact',
+    };
 
-    if ((e.target as Element).classList.contains('Experience')) {
-      document
-        .querySelector('#experience')
-        ?.scrollIntoView({ behavior: 'smooth' });
-    }
+    const section = Object.keys(sectionMap).find((key) =>
+      target.classList.contains(key)
+    );
 
-    if ((e.target as Element).classList.contains('Projects')) {
-      document
-        .querySelector('#projects')
-        ?.scrollIntoView({ behavior: 'smooth' });
+    if (section) {
+      document.querySelector(sectionMap[section])?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+      window.history.pushState(null, '', item ? `/${item.toLowerCase()}` : '/');
     }
-
-    if ((e.target as Element).classList.contains('Resume')) {
-      document.querySelector('#resume')?.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    if ((e.target as Element).classList.contains('Contact')) {
-      document
-        .querySelector('#contact')
-        ?.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    window.history.pushState('object or string', 'Title', '/' + item);
   };
 
   return (
     <Flex
-      bg={useColorModeValue('gray.200', 'gray.900')}
-      justifyContent="center"
-      direction={'row'}
-      zIndex="sticky"
+      as="nav"
       position="fixed"
-      as="header"
-      w="100%"
-      py={4}
+      top={0}
+      left={0}
+      right={0}
+      zIndex={1000}
+      backdropFilter="blur(12px)"
+      bg={navBg}
+      borderBottom="1px solid"
+      borderColor={borderColor}
+      py={3}
     >
-      {isLargerThanMD ? (
-        <>
-          <Container display="flex" maxW={'4xl'}>
-            <HStack flexGrow={1}>
+      <Container maxW="4xl" display="flex" alignItems="center">
+        {isLargerThanMD ? (
+          <>
+            <HStack flex={1}>
               <Home
                 size="lg"
                 onClick={(e) => goToTheSpecificSection(e, undefined)}
               />
             </HStack>
-            <HStack spacing={7}>
-              {NavItems.map((item, index) => (
+            <HStack spacing={6}>
+              {NavItems.map((item) => (
                 <Button
+                  key={item}
                   onClick={(e) => goToTheSpecificSection(e, item)}
-                  key={index}
                   className={`nav-btn ${item}`}
-                  variant="link"
+                  variant="ghost"
+                  size="sm"
+                  fontWeight={400} // Lighter weight
+                  fontSize="15px"
+                  _hover={{
+                    color: 'brand.500',
+                    bg: 'transparent',
+                  }}
+                  _active={{
+                    bg: 'transparent',
+                  }}
                 >
                   {item}
                 </Button>
               ))}
               <ThemeButton />
             </HStack>
-          </Container>
-        </>
-      ) : (
-        <>
-          <HStack w="100%" direction="row">
-            <HStack justifyContent="end" flexGrow={1}>
-              <ThemeButton />
-              <Button
-                className="nav-btn navbar-toggle-btn"
-                variant="link"
-                leftIcon={<CiMenuFries />}
-                onClick={onOpen}
-              ></Button>
-              <Drawer
-                placement="right"
-                onClose={onClose}
-                isOpen={isOpen}
-                size="xs"
-              >
-                <DrawerOverlay />
-                <DrawerContent>
-                  <DrawerCloseButton color={colors['teal']} />
-                  <DrawerHeader alignSelf="center" my="100px">
-                    <Home
-                      size="xx-large"
-                      onClick={(e) => goToTheSpecificSection(e, undefined)}
-                    />
-                  </DrawerHeader>
-                  <DrawerBody alignContent="start">
-                    <VStack spacing={7}>
-                      {NavItems.map((item, index) => (
-                        <Button
-                          onClick={(e) => goToTheSpecificSection(e, item)}
-                          key={index}
-                          className={`nav-btn ${item}`}
-                          variant="link"
-                        >
-                          {item}
-                        </Button>
-                      ))}
-                    </VStack>
-                  </DrawerBody>
-                </DrawerContent>
-              </Drawer>
+          </>
+        ) : (
+          <>
+            <HStack w="100%" justifyContent="space-between">
+              <Home
+                size="md"
+                onClick={(e) => goToTheSpecificSection(e, undefined)}
+              />
+              <HStack spacing={2}>
+                <ThemeButton />
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={onOpen}
+                  aria-label="Open menu"
+                >
+                  <CiMenuFries size={20} />
+                </Button>
+              </HStack>
             </HStack>
-          </HStack>
-        </>
-      )}
+
+            <Drawer
+              placement="right"
+              onClose={onClose}
+              isOpen={isOpen}
+              size="xs"
+            >
+              <DrawerOverlay backdropFilter="blur(4px)" />
+              <DrawerContent>
+                <DrawerCloseButton color="brand.500" />
+                <DrawerHeader pt={8}>
+                  <Home
+                    size="xl"
+                    onClick={(e) => goToTheSpecificSection(e, undefined)}
+                  />
+                </DrawerHeader>
+                <DrawerBody pt={12}>
+                  <VStack spacing={6} align="stretch">
+                    {NavItems.map((item) => (
+                      <Button
+                        key={item}
+                        onClick={(e) => goToTheSpecificSection(e, item)}
+                        className={`nav-btn ${item}`}
+                        variant="ghost"
+                        size="lg"
+                        justifyContent="flex-start"
+                        fontWeight={500}
+                        _hover={{
+                          color: 'brand.500',
+                          bg: 'transparent',
+                        }}
+                      >
+                        {item}
+                      </Button>
+                    ))}
+                  </VStack>
+                </DrawerBody>
+              </DrawerContent>
+            </Drawer>
+          </>
+        )}
+      </Container>
     </Flex>
   );
 };

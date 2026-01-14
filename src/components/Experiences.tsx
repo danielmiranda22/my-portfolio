@@ -12,8 +12,8 @@ const Experiences = () => {
         <Stack
           as={Box}
           spacing={4}
-          pb={{ base: 20, md: 36 }}
-          pt={{ base: 100, md: 20 }}
+          pb={{ base: 16, md: 20 }}
+          pt={{ base: 4, md: 6 }}
           px={4}
         >
           <Skeleton height="250px" borderRadius="lg" />
@@ -40,8 +40,8 @@ const Experiences = () => {
         as={Box}
         textAlign="center"
         spacing={8}
-        pb={{ base: 20, md: 36 }}
-        pt={{ base: 100, md: 20 }}
+        pb={{ base: 16, md: 20 }}
+        pt={{ base: 4, md: 6 }}
       >
         <Stack px={4} spacing={4}>
           {experiences.map((exp) => (

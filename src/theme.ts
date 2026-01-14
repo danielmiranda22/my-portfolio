@@ -7,32 +7,48 @@ const config: ThemeConfig = {
 const theme = extendTheme({
   config,
   fonts: {
-    heading: `'IBM Plex Mono', monospace`,
-    body: `'IBM Plex Mono', monospace`,
+    // Use system fonts like robod.dev
+    heading: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif`,
+    body: `-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif`,
+    mono: `'Fira Code', monospace`, // Keep mono for code
   },
   colors: {
-    gray: {
-      50: '#f0f1f4',
-      100: '#d3d5d9',
-      200: '#b7b9c1',
-      300: '#9a9dab',
-      400: '#7d8094',
-      500: '#63657a',
-      600: '#4e4f5f',
-      700: '#383843',
-      800: '#212128',
-      900: '#0b0b0f',
+    brand: {
+      50: '#e6f7f7',
+      100: '#b3e6e6',
+      200: '#80d5d5',
+      300: '#4dc4c4',
+      400: '#1ab3b3',
+      500: '#008080', // main teal
+      600: '#006666',
+      700: '#004d4d',
+      800: '#003333',
+      900: '#001a1a',
     },
   },
-  lineHeights: {
-    normal: '1.50',
-    relaxed: '1.75',
-    custom: '1.75', // Add any custom values you'd like
-  },
   styles: {
-    global: {
-      'html, body': {
-        lineHeight: 'relaxed', // This will apply globally to all text inheriting from the body
+    global: (props: any) => ({
+      body: {
+        bg: props.colorMode === 'dark' ? 'gray.900' : 'white',
+        color: props.colorMode === 'dark' ? 'gray.100' : 'gray.900',
+        fontSize: '16px',
+        lineHeight: '1.7',
+      },
+      'h1, h2, h3, h4, h5, h6': {
+        letterSpacing: '-0.02em',
+        fontWeight: 600,
+      },
+    }),
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        fontWeight: 500,
+      },
+    },
+    Container: {
+      baseStyle: {
+        maxW: '3xl',
       },
     },
   },

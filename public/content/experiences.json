@@ -2,7 +2,7 @@
   {
     "company": "Innux Technologies",
     "role": "FullStack Developer",
-    "interval": "Feb '20 - Present day",
+    "interval": "Feb '20 - Present",
     "image": "/assets/company_logo.webp",
     "tag": {
       "tagName": "Technology"
@@ -16,11 +16,12 @@
       { "name": "SQL", "colorScheme": "gray" }
     ],
     "listItems": [
-      "Collaborated in the development of various commercial backend services for ticketing, access control and clocking.",
-      "Collaborated on the development of a platform for attendance, access management, and HR management.  (Currently maintaining and working on new features)",
-      "Contributed to the analysis and subsequent design of UI interfaces and solutions.",
-      "Develop several mobile applications using old Xamarin and the new .NET MAUI framework (currently maintaining).",
-      "Provided assistance and collaboration in the maintenance of legacy applications."
+      "Developed a complaint management system (whistleblower channel) for the HR platform, handling sensitive data with proper access controls and compliance requirements.",
+      "Implemented custom Tag Helpers for role-based access control, validating user permissions against application profiles and license restrictions.",
+      "Collaborated on the development of a platform for attendance, access management, and HR management (currently maintaining and implementing new features).",
+      "Developed several mobile applications using Xamarin and . NET MAUI framework (currently maintaining).",
+      "Collaborated in the development of commercial backend services for ticketing, access control, and time-tracking systems.",
+      "Provided support and maintenance for legacy applications."
     ]
   }
 ]

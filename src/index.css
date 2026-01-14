@@ -1,23 +1,32 @@
 :root {
-  --teal: rgb(0, 128, 128);
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
+/* Better font smoothing */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom button styles */
 .nav-btn {
   text-decoration: none !important;
+  transition: all 0.2s ease;
 }
 
-.nav-btn:hover {
-  color: var(--teal);
-}
-
+/* Icon styles */
 .base-icon {
   font-size: 20px;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .rotate:hover {
-  cursor: pointer;
   rotate: 6deg;
-  color: var(--teal);
+  transform: scale(1.1);
 }
 
 .spin {
@@ -26,4 +35,24 @@
 
 .spin:hover {
   transform: rotate(45deg);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll offset for fixed nav */
+* {
+  scroll-margin-top: 100px;
+}
+
+/* Card hover effects (subtle) */
+.chakra-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chakra-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }

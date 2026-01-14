@@ -3,29 +3,29 @@ import {
   Button,
   Center,
   Container,
+  Heading,
+  HStack,
   Skeleton,
   Stack,
   Text,
-  theme,
-  useColorMode,
+  useColorModeValue,
   VStack,
 } from '@chakra-ui/react';
 import { LuBriefcase } from 'react-icons/lu';
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import colors from '../utilities/colors';
 import ProfileData from '../data/ProfileData';
 import { FaDownload } from 'react-icons/fa';
+import { Fade } from 'react-awesome-reveal';
 
 const Resume = () => {
   const { profile, loading } = ProfileData();
-  const { colorMode } = useColorMode();
+
+  const cardBg = useColorModeValue('gray.50', 'gray.800');
+  const borderColor = useColorModeValue('gray.200', 'gray. 700');
+  const iconBg = useColorModeValue('brand.500', 'brand.400');
+  const headingColor = useColorModeValue('gray.700', 'gray.300');
 
   const downloadCV = () => {
-    fetch('content/cv.pdf')
+    fetch('content/cv. pdf')
       .then((resp) => {
         if (!resp.ok) throw new Error('Error fetching data');
         return resp.blob();
@@ -43,168 +43,100 @@ const Resume = () => {
       });
   };
 
-  const timeLineCardStyle = {
-    backgroundColor:
-      colorMode === 'light' ? theme.colors.gray[200] : theme.colors.gray[900],
-    color:
-      colorMode === 'light' ? theme.colors.gray[900] : theme.colors.gray[200],
-  };
-
-  // Loading state
   if (loading || !profile) {
     return (
       <Container maxW="3xl" id="resume">
         <Stack
           as={Box}
           spacing={8}
-          pb={{ base: 20, md: 36 }}
-          pt={{ base: 100, md: 20 }}
+          pb={{ base: 16, md: 20 }}
+          pt={{ base: 4, md: 6 }}
         >
-          <Skeleton height="200px" borderRadius="lg" />
-          <Skeleton height="200px" borderRadius="lg" />
-          <Skeleton height="200px" borderRadius="lg" />
+          <Skeleton height="150px" borderRadius="lg" />
+          <Skeleton height="150px" borderRadius="lg" />
+          <Skeleton height="150px" borderRadius="lg" />
         </Stack>
       </Container>
     );
   }
 
+  const sections = [
+    {
+      title: profile.resumeHeaderOne,
+      items: profile.resumeInfoOne,
+    },
+    {
+      title: profile.resumeHeaderTwo,
+      items: profile.resumeInfoTwo,
+    },
+    {
+      title: profile.resumeHeaderThree,
+      items: profile.resumeInfoThree,
+    },
+  ];
+
   return (
     <Container maxW="3xl" id="resume">
       <Stack
         as={Box}
-        textAlign="left"
-        spacing={8}
-        pb={{ base: 20, md: 36 }}
-        pt={{ base: 100, md: 20 }}
+        spacing={6}
+        pb={{ base: 16, md: 20 }}
+        pt={{ base: 4, md: 6 }}
       >
-        <VerticalTimeline
-          lineColor={
-            colorMode === 'light'
-              ? theme.colors.gray[200]
-              : theme.colors.gray[900]
-          }
-        >
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={timeLineCardStyle}
-            contentArrowStyle={{
-              borderRight: `7px solid ${
-                colorMode === 'light'
-                  ? theme.colors.gray[200]
-                  : theme.colors.gray[900]
-              }`,
-            }}
-            iconClassName="ic-size"
-            iconStyle={{ background: colors['teal'], color: '#fff' }}
-            icon={<LuBriefcase />}
-          >
-            <VStack spacing={2} alignItems="left">
-              <Text
-                fontSize="2xl"
-                as="span"
-                color={theme.colors.gray[500]}
-                className="vertical-timeline-element-title"
-              >
-                {profile.resumeHeaderOne}
-              </Text>
-              {profile.resumeInfoOne.map((info, index) => (
-                <Text
-                  key={index}
-                  fontSize="lg"
-                  as="span"
-                  className="vertical-timeline-element-title"
+        {sections.map((section, index) => (
+          <Fade direction="up">
+            <Box
+              key={index}
+              p={6}
+              bg={cardBg}
+              borderRadius="lg"
+              borderLeft="4px solid"
+              borderColor={iconBg}
+              transition="all 0.2s"
+              _hover={{
+                transform: 'translateX(4px)',
+                boxShadow: 'md',
+              }}
+            >
+              <HStack spacing={4} mb={4} alignItems="flex-start">
+                <Box
+                  p={3}
+                  bg={iconBg}
+                  borderRadius="md"
+                  color="white"
+                  flexShrink={0}
                 >
-                  {info}
-                </Text>
-              ))}
-            </VStack>
-          </VerticalTimelineElement>
+                  <LuBriefcase size={20} />
+                </Box>
+                <Heading size="md" color={headingColor}>
+                  {section.title}
+                </Heading>
+              </HStack>
+              <VStack spacing={3} alignItems="flex-start" pl={14}>
+                {section.items.map((item, idx) => (
+                  <Text key={idx} fontSize="md" lineHeight="tall">
+                    {item}
+                  </Text>
+                ))}
+              </VStack>
+            </Box>
+          </Fade>
+        ))}
 
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={timeLineCardStyle}
-            contentArrowStyle={{
-              borderRight: `7px solid ${
-                colorMode === 'light'
-                  ? theme.colors.gray[200]
-                  : theme.colors.gray[900]
-              }`,
-            }}
-            iconClassName="ic-size"
-            iconStyle={{ background: colors['teal'], color: '#fff' }}
-            icon={<LuBriefcase />}
-          >
-            <VStack spacing={2} alignItems="left">
-              <Text
-                fontSize="2xl"
-                as="span"
-                color={theme.colors.gray[500]}
-                className="vertical-timeline-element-title"
-              >
-                {profile.resumeHeaderTwo}
-              </Text>
-              {profile.resumeInfoTwo.map((info, index) => (
-                <Text
-                  key={index}
-                  fontSize="lg"
-                  as="span"
-                  className="vertical-timeline-element-title"
-                >
-                  {info}
-                </Text>
-              ))}
-            </VStack>
-          </VerticalTimelineElement>
-
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={timeLineCardStyle}
-            contentArrowStyle={{
-              borderRight: `7px solid ${
-                colorMode === 'light'
-                  ? theme.colors.gray[200]
-                  : theme.colors.gray[900]
-              }`,
-            }}
-            iconStyle={{
-              background: colors['teal'],
-              color: '#fff',
-            }}
-            iconClassName="ic-size"
-            icon={<LuBriefcase />}
-          >
-            <VStack spacing={2} alignItems="left">
-              <Text
-                fontSize="2xl"
-                as="span"
-                color={theme.colors.gray[500]}
-                className="vertical-timeline-element-title"
-              >
-                {profile.resumeHeaderThree}
-              </Text>
-              {profile.resumeInfoThree.map((info, index) => (
-                <Text
-                  key={index}
-                  fontSize="lg"
-                  as="span"
-                  className="vertical-timeline-element-title"
-                >
-                  {info}
-                </Text>
-              ))}
-            </VStack>
-          </VerticalTimelineElement>
-        </VerticalTimeline>
-
-        <Center>
+        <Center mt={6}>
           <Button
-            size="sm"
+            size="md"
             onClick={downloadCV}
-            width={'fit-content'}
-            _hover={{ color: 'teal' }}
-            className="nav-btn"
+            variant="outline"
+            colorScheme="brand"
             leftIcon={<FaDownload />}
-            variant="solid"
+            _hover={{
+              bg: 'brand.500',
+              color: 'white',
+              transform: 'translateY(-2px)',
+              boxShadow: 'md',
+            }}
+            transition="all 0.2s"
           >
             Download CV
           </Button>

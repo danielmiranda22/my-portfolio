@@ -11,8 +11,8 @@ const Projects = () => {
         <Stack
           as={Box}
           spacing={4}
-          pb={{ base: 20, md: 36 }}
-          pt={{ base: 100, md: 20 }}
+          pb={{ base: 16, md: 20 }}
+          pt={{ base: 4, md: 6 }}
           px={4}
         >
           <Skeleton height="300px" borderRadius="lg" />
@@ -36,8 +36,8 @@ const Projects = () => {
         as={Box}
         textAlign="center"
         spacing={8}
-        pb={{ base: 20, md: 36 }}
-        pt={{ base: 100, md: 20 }}
+        pb={{ base: 16, md: 20 }}
+        pt={{ base: 4, md: 6 }}
       >
         <Stack px={4} spacing={4}>
           {projects.map((project) => (

@@ -9,7 +9,6 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import ProfileData from '../data/ProfileData';
-import colors from '../utilities/colors';
 import { LuLinkedin, LuMail } from 'react-icons/lu';
 
 const Contact = () => {
@@ -31,7 +30,6 @@ const Contact = () => {
     }
   };
 
-  // Loading state
   if (loading || !profile) {
     return (
       <Container maxW="3xl" id="contact">
@@ -39,8 +37,8 @@ const Contact = () => {
           as={Box}
           textAlign="center"
           spacing={8}
-          pb={{ base: 20, md: 36 }}
-          pt={{ base: 100, md: 20 }}
+          pb={{ base: 16, md: 20 }}
+          pt={{ base: 4, md: 6 }}
         >
           <VStack spacing={4}>
             <Skeleton height="30px" width="300px" />
@@ -62,15 +60,15 @@ const Contact = () => {
         as={Box}
         textAlign="center"
         spacing={8}
-        pb={{ base: 20, md: 36 }}
-        pt={{ base: 100, md: 20 }}
+        pb={{ base: 16, md: 20 }}
+        pt={{ base: 4, md: 6 }}
       >
         <Stack spacing={4} as={Container} mx="3xl" textAlign="center">
           <Heading fontSize="xl">Feel free to stay in touch</Heading>
           <Text px={4} fontSize="lg">
             {profile.contactPhoneNumber}
           </Text>
-          <Text color={colors['teal']} px={4} fontSize="lg">
+          <Text color="brand.500" px={4} fontSize="lg">
             {profile.contactEmail}
           </Text>
           <HStack spacing={4} justify="center">

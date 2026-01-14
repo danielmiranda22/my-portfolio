@@ -12,7 +12,6 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import colors from '../utilities/colors';
 import ProfileData from '../data/ProfileData';
 import devImg from '../assets/dev.svg';
 import { LuPlaneTakeoff } from 'react-icons/lu';
@@ -29,8 +28,8 @@ const About = () => {
         <Stack
           as={Box}
           spacing={8}
-          pb={{ base: 20, md: 36 }}
-          pt={{ base: 100, md: 20 }}
+          pb={{ base: 16, md: 20 }}
+          pt={{ base: 4, md: 6 }}
         >
           <Skeleton height="100px" />
           <Skeleton height="200px" />
@@ -46,8 +45,8 @@ const About = () => {
         as={Box}
         textAlign="left"
         spacing={8}
-        pb={{ base: 20, md: 36 }}
-        pt={{ base: 100, md: 20 }}
+        pb={{ base: 16, md: 20 }}
+        pt={{ base: 4, md: 6 }}
       >
         <Text fontSize="md">{profile.heroCumpliment}</Text>
 
@@ -58,15 +57,15 @@ const About = () => {
 
           <List width="100%" textAlign="start" spacing={4}>
             <ListItem>
-              <ListIcon as={GiWeightLiftingUp} color={colors['teal']} />
+              <ListIcon as={GiWeightLiftingUp} color="brand.500" />
               {profile.aboutActivitiesTravel}
             </ListItem>
             <ListItem>
-              <ListIcon as={LuPlaneTakeoff} color={colors['teal']} />
+              <ListIcon as={LuPlaneTakeoff} color="brand.500" />
               {profile.aboutActivitiesPlaySports}
             </ListItem>
             <ListItem>
-              <ListIcon as={GiHiking} color={colors['teal']} />
+              <ListIcon as={GiHiking} color="brand.500" />
               {profile.aboutActivitiesHangOut}
             </ListItem>
           </List>
@@ -83,7 +82,7 @@ const About = () => {
 
         <Heading size="lg">
           Tech{' '}
-          <Text as="span" color={`${colors['teal']}`}>
+          <Text as="span" color="brand.500">
             Stack
           </Text>
         </Heading>
@@ -94,7 +93,7 @@ const About = () => {
           <List width="100%" textAlign="start" spacing={3}>
             {profile.tech.map((tech, index) => (
               <ListItem key={index}>
-                <ListIcon as={GoDotFill} color={colors['teal']} />
+                <ListIcon as={GoDotFill} color="brand. 500" />
                 {tech}
               </ListItem>
             ))}
@@ -105,7 +104,7 @@ const About = () => {
 
         <Heading size="lg">
           My{' '}
-          <Text color={`${colors['teal']}`} as="strong">
+          <Text color="brand.500" as="strong">
             Tools
           </Text>
         </Heading>

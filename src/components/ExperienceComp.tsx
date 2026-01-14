@@ -16,7 +16,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { FaChevronRight } from 'react-icons/fa';
-import colors from '../utilities/colors';
 import { Fade } from 'react-awesome-reveal';
 import { useState } from 'react';
 
@@ -52,11 +51,7 @@ const ExperienceComp = ({ experience }: Props) => {
             <List spacing={3} {...collapseAttr}>
               {experience.listItems.map((item, index) => (
                 <ListItem key={index} textAlign="left">
-                  <ListIcon
-                    boxSize={4}
-                    as={FaChevronRight}
-                    color={colors['teal']}
-                  />
+                  <ListIcon boxSize={4} as={FaChevronRight} color="brand.500" />
                   {item}
                 </ListItem>
               ))}

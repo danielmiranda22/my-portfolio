@@ -1,0 +1,26 @@
+[
+  {
+    "company": "Innux Technologies",
+    "role": "FullStack Developer",
+    "interval": "Feb '20 - Present day",
+    "image": "/assets/company_logo.webp",
+    "tag": {
+      "tagName": "Technology"
+    },
+    "badges": [
+      { "name": "C#", "colorScheme": "purple" },
+      { "name": ". NET", "colorScheme": "blue" },
+      { "name": "JavaScript", "colorScheme": "yellow" },
+      { "name": "HTML & CSS", "colorScheme": "orange" },
+      { "name": "Bootstrap", "colorScheme": "red" },
+      { "name": "SQL", "colorScheme": "gray" }
+    ],
+    "listItems": [
+      "Collaborated in the development of various commercial backend services for ticketing, access control and clocking.",
+      "Collaborated on the development of a platform for attendance, access management, and HR management.  (Currently maintaining and working on new features)",
+      "Contributed to the analysis and subsequent design of UI interfaces and solutions.",
+      "Develop several mobile applications using old Xamarin and the new .NET MAUI framework (currently maintaining).",
+      "Provided assistance and collaboration in the maintenance of legacy applications."
+    ]
+  }
+]

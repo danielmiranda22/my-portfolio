@@ -3,6 +3,7 @@ import {
   Button,
   Center,
   Container,
+  Skeleton,
   Stack,
   Text,
   theme,
@@ -20,8 +21,9 @@ import ProfileData from '../data/ProfileData';
 import { FaDownload } from 'react-icons/fa';
 
 const Resume = () => {
-  const profile = ProfileData();
+  const { profile, loading } = ProfileData();
   const { colorMode } = useColorMode();
+
   const downloadCV = () => {
     fetch('content/cv.pdf')
       .then((resp) => {
@@ -34,6 +36,10 @@ const Resume = () => {
         alink.href = fileURL;
         alink.download = 'cv_danielOliveira.pdf';
         alink.click();
+      })
+      .catch((error) => {
+        console.error('Error downloading CV:', error);
+        alert('Failed to download CV. Please try again.');
       });
   };
 
@@ -43,6 +49,24 @@ const Resume = () => {
     color:
       colorMode === 'light' ? theme.colors.gray[900] : theme.colors.gray[200],
   };
+
+  // Loading state
+  if (loading || !profile) {
+    return (
+      <Container maxW="3xl" id="resume">
+        <Stack
+          as={Box}
+          spacing={8}
+          pb={{ base: 20, md: 36 }}
+          pt={{ base: 100, md: 20 }}
+        >
+          <Skeleton height="200px" borderRadius="lg" />
+          <Skeleton height="200px" borderRadius="lg" />
+          <Skeleton height="200px" borderRadius="lg" />
+        </Stack>
+      </Container>
+    );
+  }
 
   return (
     <Container maxW="3xl" id="resume">
@@ -55,7 +79,7 @@ const Resume = () => {
       >
         <VerticalTimeline
           lineColor={
-            colorMode == 'light'
+            colorMode === 'light'
               ? theme.colors.gray[200]
               : theme.colors.gray[900]
           }
@@ -65,7 +89,7 @@ const Resume = () => {
             contentStyle={timeLineCardStyle}
             contentArrowStyle={{
               borderRight: `7px solid ${
-                colorMode == 'light'
+                colorMode === 'light'
                   ? theme.colors.gray[200]
                   : theme.colors.gray[900]
               }`,
@@ -81,7 +105,7 @@ const Resume = () => {
                 color={theme.colors.gray[500]}
                 className="vertical-timeline-element-title"
               >
-                {profile.resumeHeaderOne}{' '}
+                {profile.resumeHeaderOne}
               </Text>
               {profile.resumeInfoOne.map((info, index) => (
                 <Text
@@ -101,7 +125,7 @@ const Resume = () => {
             contentStyle={timeLineCardStyle}
             contentArrowStyle={{
               borderRight: `7px solid ${
-                colorMode == 'light'
+                colorMode === 'light'
                   ? theme.colors.gray[200]
                   : theme.colors.gray[900]
               }`,
@@ -117,9 +141,8 @@ const Resume = () => {
                 color={theme.colors.gray[500]}
                 className="vertical-timeline-element-title"
               >
-                {profile.resumeHeaderTwo}{' '}
+                {profile.resumeHeaderTwo}
               </Text>
-
               {profile.resumeInfoTwo.map((info, index) => (
                 <Text
                   key={index}
@@ -138,7 +161,7 @@ const Resume = () => {
             contentStyle={timeLineCardStyle}
             contentArrowStyle={{
               borderRight: `7px solid ${
-                colorMode == 'light'
+                colorMode === 'light'
                   ? theme.colors.gray[200]
                   : theme.colors.gray[900]
               }`,
@@ -157,9 +180,8 @@ const Resume = () => {
                 color={theme.colors.gray[500]}
                 className="vertical-timeline-element-title"
               >
-                {profile.resumeHeaderThree}{' '}
+                {profile.resumeHeaderThree}
               </Text>
-
               {profile.resumeInfoThree.map((info, index) => (
                 <Text
                   key={index}
@@ -184,8 +206,8 @@ const Resume = () => {
             leftIcon={<FaDownload />}
             variant="solid"
           >
-            Donwload CV
-          </Button>{' '}
+            Download CV
+          </Button>
         </Center>
       </Stack>
     </Container>

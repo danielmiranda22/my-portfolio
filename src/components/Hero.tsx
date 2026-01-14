@@ -1,9 +1,26 @@
-import { Box, Container, Image, Stack, Text } from '@chakra-ui/react';
+import { Box, Container, Image, Skeleton, Stack, Text } from '@chakra-ui/react';
 import ProfileData from '../data/ProfileData';
 import profileIMG from '../assets/profileIMG.webp';
 
 const Hero = () => {
-  const profile = ProfileData();
+  const { profile, loading } = ProfileData();
+
+  if (loading || !profile) {
+    return (
+      <Container maxW="3xl" id="hero">
+        <Stack
+          as={Box}
+          alignItems="center"
+          textAlign="center"
+          pb={{ base: 20, md: 36 }}
+          pt={{ base: 20, md: 36 }}
+          spacing={10}
+        >
+          <Skeleton borderRadius="full" boxSize="350px" />
+        </Stack>
+      </Container>
+    );
+  }
 
   return (
     <Container maxW="3xl" id="hero">

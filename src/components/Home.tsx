@@ -9,7 +9,8 @@ interface Props {
 }
 
 const Home = ({ size, onClick }: Props) => {
-  const profile = ProfileData();
+  const { profile } = ProfileData();
+
   return (
     <Button
       onClick={onClick}
@@ -17,7 +18,7 @@ const Home = ({ size, onClick }: Props) => {
       variant="link"
       fontSize={size}
     >
-      {profile.logo}
+      {profile?.logo || 'DO'}
       <Text as="span" color={colors['teal']} onClick={onClick} className="Hero">
         .
       </Text>

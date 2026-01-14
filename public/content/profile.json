@@ -1,0 +1,46 @@
+{
+  "logo": "DO",
+  "heroCumpliment": "First of all, thank you for checking out my portfolio and wanting to know more about me!  I'm Daniel Oliveira, a software developer based in Porto, Portugal. I currently work at Innux Technologies, where I collaborate on several commercial projects.",
+  "aboutBrief": "From building desktop and mobile apps to APIs and robust web applications, I love creating innovative solutions.  I strive to stay up-to-date with the latest technologies and am committed to continuous learning and growth.",
+  "tech": [
+    ". NET",
+    "ASP.NET",
+    "JavaScript",
+    "jQuery",
+    "Xamarin",
+    ". Net MAUI",
+    "Azure"
+  ],
+  "aboutExtra": "That being said, I'm always open to exploring new technologies.  Take this portfolio, for example.  It's built with React 🚀 and TypeScript, both of which are technologies I hadn't worked with extensively before.",
+  "aboutActivitiesTitle": "Apart from coding, some other activities that I love to do! ",
+  "aboutActivitiesTravel": "Sports",
+  "aboutActivitiesPlaySports": "Travel",
+  "aboutActivitiesHangOut": "Tracking",
+  "tools": [
+    "VS",
+    "Postman",
+    "Discord",
+    "Windows",
+    "Mac",
+    "StackOverflow",
+    "Git",
+    "Azure"
+  ],
+  "resumeHeaderOne": "Web Development",
+  "resumeInfoOne": [
+    "Collaborated on the development of several web applications, including an HR platform, an Access Management System, and a Ticketing website.  Currently maintaining and implementing new features."
+  ],
+  "resumeHeaderTwo": "Mobile Development",
+  "resumeInfoTwo": [
+    "Developed an access control and time clocking application.",
+    "Contributed to the design and development of a scanner application for ticket validation."
+  ],
+  "resumeHeaderThree": "Desktop Development",
+  "resumeInfoThree": [
+    "Collaborated on the development of various Windows applications, focusing on maintaining legacy systems."
+  ],
+  "contactPhoneNumber": "(+351) 912 012 095",
+  "contactEmail": "danmiranda227@gmail.com",
+  "contactAddress": "Porto, Portugal",
+  "contactLinkdin": "https://www.linkedin.com/in/daniel-oliveira-a8844b169"
+}

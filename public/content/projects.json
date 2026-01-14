@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Game Hub",
+    "description": "Find any game from any genre.  A game hub project where you can discover hundreds of games, check their scores, and see which platforms they are available on.",
+    "sideNote": "Built to dive into React state management, API calls, and handling dynamic data.",
+    "image": "/assets/game_finder_poster.webp",
+    "badges": [
+      { "name": "TypeScript", "colorScheme": "blue" },
+      { "name": "React", "colorScheme": "teal" },
+      { "name": "Chakra UI", "colorScheme": "green" }
+    ],
+    "links": [
+      { "text": "Visit", "href": "https://game-finder-by-dano.vercel.app/" },
+      {
+        "text": "GitHub",
+        "href": "https://github.com/danielmiranda22/game-finder"
+      }
+    ]
+  }
+]

@@ -13,13 +13,14 @@ import { Fade } from 'react-awesome-reveal';
 import Project from '../models/Project';
 import colors from '../utilities/colors';
 import { LuArrowBigUp, LuArrowUpRight, LuMail } from 'react-icons/lu';
+import { FaGithub } from 'react-icons/fa';
 
 interface Props {
   project: Project;
 }
 
 const ProjectComponent = ({ project }: Props) => {
-  const visitGameHubProject = (href: String) => {
+  const visitProject = (href: String) => {
     window.open(`${href}`, '_blank', 'noreferrer,noopener');
   };
   return (
@@ -28,26 +29,47 @@ const ProjectComponent = ({ project }: Props) => {
         key={project.title}
         direction={{ base: 'column' }}
         overflow={'hidden'}
+        position="relative"
       >
+        {/* Status badge for in-progress projects */}
+        {project.status === 'in-progress' && (
+          <Badge
+            position="absolute"
+            top={4}
+            right={4}
+            colorScheme="yellow"
+            fontSize="sm"
+            zIndex={1}
+          >
+            🚧 In Progress
+          </Badge>
+        )}
+
         <Image objectFit="cover" src={project.image} />
 
         <CardBody textAlign="left">
           <Heading size="md">{project.title}</Heading>
           <Text py={2}>{project.description}</Text>
-          <Text py={2} fontSize="small">
+          <Text py={2} fontSize="small" fontStyle="italic" color="gray.500">
             {project.sideNote}
           </Text>
 
           <HStack py={2}>
-            {project.projectsDomains.map((projectDomain) => (
+            {project.links.map((link, idx) => (
               <Button
-                key={project.title}
+                key={idx}
                 size="sm"
-                leftIcon={<LuArrowUpRight />}
+                leftIcon={
+                  link.text.toLowerCase().includes('github') ? (
+                    <FaGithub />
+                  ) : (
+                    <LuArrowUpRight />
+                  )
+                }
                 className="nav-btn"
-                onClick={() => visitGameHubProject(projectDomain.href)}
+                onClick={() => visitProject(link.href)}
               >
-                {projectDomain.text}
+                {link.text}
               </Button>
             ))}
           </HStack>

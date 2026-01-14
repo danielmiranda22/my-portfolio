@@ -1,16 +1,15 @@
 import {
   Box,
   Container,
-  Divider,
   Flex,
   Heading,
   Image,
   List,
   ListIcon,
   ListItem,
+  Skeleton,
   Stack,
   Text,
-  useMediaQuery,
   VStack,
 } from '@chakra-ui/react';
 import colors from '../utilities/colors';
@@ -22,7 +21,24 @@ import { GoDotFill } from 'react-icons/go';
 import Skill from './Skill';
 
 const About = () => {
-  const profile = ProfileData();
+  const { profile, loading } = ProfileData();
+
+  if (loading || !profile) {
+    return (
+      <Container maxW="3xl" id="about">
+        <Stack
+          as={Box}
+          spacing={8}
+          pb={{ base: 20, md: 36 }}
+          pt={{ base: 100, md: 20 }}
+        >
+          <Skeleton height="100px" />
+          <Skeleton height="200px" />
+          <Skeleton height="300px" borderRadius="full" mx="auto" />
+        </Stack>
+      </Container>
+    );
+  }
 
   return (
     <Container maxW="3xl" id="about">

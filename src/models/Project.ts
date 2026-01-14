@@ -1,5 +1,4 @@
 import Badge from './Badge';
-import ProjectDomain from './ProjectDomain';
 
 export default interface Project {
   image: string;
@@ -7,5 +6,6 @@ export default interface Project {
   description: string;
   sideNote: string;
   badges: Badge[];
-  projectsDomains: ProjectDomain[];
+  links: { text: string; href: string }[];
+  status?: 'in-progress' | 'completed';
 }

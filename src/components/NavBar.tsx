@@ -26,7 +26,7 @@ const NavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const navBg = useColorModeValue('whiteAlpha.800', 'gray.900');
-  const borderColor = useColorModeValue('gray.200', 'gray. 700');
+  const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   const goToTheSpecificSection = (
     e: SyntheticEvent,

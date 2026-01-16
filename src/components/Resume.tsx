@@ -25,7 +25,7 @@ const Resume = () => {
   const headingColor = useColorModeValue('gray.700', 'gray.300');
 
   const downloadCV = () => {
-    fetch('content/cv. pdf')
+    fetch('content/cv.pdf')
       .then((resp) => {
         if (!resp.ok) throw new Error('Error fetching data');
         return resp.blob();

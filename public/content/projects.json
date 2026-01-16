@@ -1,16 +1,22 @@
 [
   {
-    "title": "Game Hub",
-    "description": "Find any game from any genre.  A game hub project where you can discover hundreds of games, check their scores, and see which platforms they are available on.",
+    "name": "Game Finder",
+    "description": "Built to go deep into the basics of React and TypeScript, this project showcases modern state management with React Query, client-side routing, API integration, and responsive design. Features include infinite scroll pagination, dark/light mode, and optimized loading states with skeleton screens.",
     "sideNote": "Built to dive into React state management, API calls, and handling dynamic data.",
     "image": "/assets/game_finder_poster.webp",
     "badges": [
+      { "name": "React", "colorScheme": "blue" },
       { "name": "TypeScript", "colorScheme": "blue" },
-      { "name": "React", "colorScheme": "teal" },
-      { "name": "Chakra UI", "colorScheme": "green" }
+      { "name": "React Query", "colorScheme": "red" },
+      { "name": "Chakra UI", "colorScheme": "teal" },
+      { "name": "React Router", "colorScheme": "purple" },
+      { "name": "Vite", "colorScheme": "yellow" }
     ],
     "links": [
-      { "text": "Visit", "href": "https://game-finder-by-dano.vercel.app/" },
+      {
+        "text": "Live Demo",
+        "href": "https://game-finder-by-dano.vercel.app/"
+      },
       {
         "text": "GitHub",
         "href": "https://github.com/danielmiranda22/game-finder"

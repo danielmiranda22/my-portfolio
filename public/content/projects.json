@@ -1,5 +1,23 @@
 [
   {
+    "name": "C# to TypeScript parser",
+    "description": "A command-line tool that converts C# classes to TypeScript interfaces. Supports basic data types, arrays, nullable types, and nested classes. Built entirely with TypeScript and Node.js using modern ESM standards, it features ergonomic configuration, robust error handling, and full test coverage - making it practical and easily extensible for real-world .NET-to-TypeScript workflows.",
+    "sideNote": "Created for practical work needs and as an experiment in Node.js & CLI engineering.",
+    "image": "/assets/dotnet_to_ts_showcase.webp",
+    "badges": [
+      { "name": "TypeScript", "colorScheme": "blue" },
+      { "name": "Node.js", "colorScheme": "green" },
+      { "name": "CLI", "colorScheme": "gray" },
+      { "name": "Vitest", "colorScheme": "red" }
+    ],
+    "links": [
+      {
+        "text": "GitHub",
+        "href": "https://github.com/danielmiranda22/dotnet-to-ts"
+      }
+    ]
+  },
+  {
     "name": "Game Finder",
     "description": "Built to go deep into the basics of React and TypeScript, this project showcases modern state management with React Query, client-side routing, API integration, and responsive design. Features include infinite scroll pagination, dark/light mode, and optimized loading states with skeleton screens.",
     "sideNote": "Built to dive into React state management, API calls, and handling dynamic data.",

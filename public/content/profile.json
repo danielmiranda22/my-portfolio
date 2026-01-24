@@ -18,14 +18,15 @@
   "aboutActivitiesPlaySports": "Travel",
   "aboutActivitiesHangOut": "Tracking",
   "tools": [
-    "VS",
+    "Visual Studio / VS Code",
+    "Git",
+    "GitHub Copilot",
+    "Windows",
+    "Azure",
     "Postman",
     "Discord",
-    "Windows",
-    "Mac",
     "StackOverflow",
-    "Git",
-    "Azure"
+    "Mac"
   ],
   "resumeHeaderOne": "Backend & Full-Stack Development",
   "resumeInfoOne": [

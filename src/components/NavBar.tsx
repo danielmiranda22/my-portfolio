@@ -30,7 +30,7 @@ const NavBar = () => {
 
   const goToTheSpecificSection = (
     e: SyntheticEvent,
-    item: string | undefined
+    item: string | undefined,
   ) => {
     if (isOpen) onClose();
 
@@ -45,7 +45,7 @@ const NavBar = () => {
     };
 
     const section = Object.keys(sectionMap).find((key) =>
-      target.classList.contains(key)
+      target.classList.contains(key),
     );
 
     if (section) {
@@ -53,7 +53,6 @@ const NavBar = () => {
         behavior: 'smooth',
         block: 'start',
       });
-      window.history.pushState(null, '', item ? `/${item.toLowerCase()}` : '/');
     }
   };
 

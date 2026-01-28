@@ -1,6 +1,5 @@
 import './App.css';
 import About from './components/About';
-import Contact from './components/Contact';
 import Experience from './components/Experiences';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
@@ -22,8 +21,6 @@ function App() {
       <Projects />
       <SectionDivider sectionNumber="04" sectionText="Resume" />
       <Resume />
-      <SectionDivider sectionNumber="05" sectionText="Contact" />
-      <Contact />
       <Footer />
     </>
   );

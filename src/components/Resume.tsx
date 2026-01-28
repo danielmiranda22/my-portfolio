@@ -20,7 +20,7 @@ const Resume = () => {
   const { profile, loading } = ProfileData();
 
   const cardBg = useColorModeValue('gray.50', 'gray.800');
-  const borderColor = useColorModeValue('gray.200', 'gray. 700');
+  const cardBorder = useColorModeValue('gray.200', 'gray.700');
   const iconBg = useColorModeValue('brand.500', 'brand.400');
   const headingColor = useColorModeValue('gray.700', 'gray.300');
 
@@ -89,14 +89,10 @@ const Resume = () => {
               key={index}
               p={6}
               bg={cardBg}
-              borderRadius="lg"
-              borderLeft="4px solid"
-              borderColor={iconBg}
+              borderRadius="xl"
+              borderLeft="1px solid"
+              borderColor={cardBorder}
               transition="all 0.2s"
-              _hover={{
-                transform: 'translateX(4px)',
-                boxShadow: 'md',
-              }}
             >
               <HStack spacing={4} mb={4} alignItems="flex-start">
                 <Box

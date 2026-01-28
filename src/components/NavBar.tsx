@@ -19,7 +19,7 @@ import ThemeButton from './ThemeButton';
 import Home from './Home';
 import { SyntheticEvent, useEffect, useRef, useState } from 'react';
 
-const NavItems = ['About', 'Experience', 'Projects', 'Resume', 'Contact'];
+const NavItems = ['About', 'Experience', 'Projects', 'Resume'];
 
 const NavBar = () => {
   const [isLargerThanMD] = useMediaQuery('(min-width: 48em)');
@@ -43,7 +43,6 @@ const NavBar = () => {
       Experience: '#experience',
       Projects: '#projects',
       Resume: '#resume',
-      Contact: '#contact',
     };
 
     const section = Object.keys(sectionMap).find((key) =>
@@ -53,6 +52,7 @@ const NavBar = () => {
     if (section) {
       // disable scroll spy while scrolling on click
       isScrollingRef.current = true;
+
       setActiveSection(section);
 
       document.querySelector(sectionMap[section])?.scrollIntoView({
@@ -63,7 +63,7 @@ const NavBar = () => {
       // Re-enable scroll spy after scrolling completes
       setTimeout(() => {
         isScrollingRef.current = false;
-      }, 1000);
+      }, 2000);
     }
   };
 
@@ -73,14 +73,7 @@ const NavBar = () => {
       // Skip scroll spy if user manually clicked a nav item
       if (isScrollingRef.current) return;
 
-      const sections = [
-        'hero',
-        'about',
-        'experience',
-        'projects',
-        'resume',
-        'contact',
-      ];
+      const sections = ['hero', 'about', 'experience', 'projects', 'resume'];
 
       // Find the section currently in view
       for (const section of sections) {

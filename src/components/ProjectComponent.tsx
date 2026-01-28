@@ -1,8 +1,7 @@
 import {
   Badge,
+  Box,
   Button,
-  Card,
-  CardBody,
   Heading,
   HStack,
   Image,
@@ -13,11 +12,13 @@ import {
   ModalFooter,
   ModalOverlay,
   Text,
+  useColorModeValue,
   useDisclosure,
+  VStack,
 } from '@chakra-ui/react';
 import { Fade } from 'react-awesome-reveal';
 import Project from '../models/Project';
-import { LuArrowUpRight, LuMail } from 'react-icons/lu';
+import { LuArrowUpRight } from 'react-icons/lu';
 import { FaGithub, FaWindowClose } from 'react-icons/fa';
 
 interface Props {
@@ -26,6 +27,9 @@ interface Props {
 
 const ProjectComponent = ({ project }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const cardBg = useColorModeValue('gray.50', 'gray.800');
+  const cardBorder = useColorModeValue('gray.200', 'gray.700');
 
   const visitProject = (href: string) => {
     window.open(href, '_blank', 'noopener,noreferrer');
@@ -70,10 +74,14 @@ const ProjectComponent = ({ project }: Props) => {
       </Modal>
 
       <Fade direction="up">
-        <Card
-          direction={{ base: 'column' }}
-          overflow="hidden"
+        <Box
+          p={6}
+          bg={cardBg}
+          borderRadius="xl"
+          borderLeft="1px solid"
+          borderColor={cardBorder}
           position="relative"
+          transition="all 0.2s"
         >
           {project.status === 'in-progress' && (
             <Badge
@@ -88,51 +96,67 @@ const ProjectComponent = ({ project }: Props) => {
             </Badge>
           )}
 
-          <Image
-            objectFit="cover"
-            src={project.image}
-            alt={project.title}
-            cursor="pointer"
-            _hover={{ opacity: 0.9 }}
-            onClick={onOpen}
-          />
+          <VStack spacing={4} align="stretch">
+            {/* Project Image */}
+            <Box
+              borderRadius="lg"
+              overflow="hidden"
+              cursor="pointer"
+              _hover={{ opacity: 0.9 }}
+              onClick={onOpen}
+            >
+              <Image
+                objectFit="cover"
+                src={project.image}
+                alt={project.title}
+                w="100%"
+                transition="transform 0.2s"
+                _hover={{ transform: 'scale(1.02)' }}
+              />
+            </Box>
 
-          <CardBody textAlign="left">
-            <Heading size="md">{project.title}</Heading>
-            <Text py={2}>{project.description}</Text>
+            {/* Project Info */}
+            <VStack spacing={3} align="stretch" textAlign="left">
+              <Heading size="md">{project.title}</Heading>
+              <Text lineHeight="tall">{project.description}</Text>
 
-            <Text py={2} fontSize="small" fontStyle="italic" color="gray.500">
-              {project.sideNote}
-            </Text>
+              {project.sideNote && (
+                <Text fontSize="sm" fontStyle="italic" color="gray.500">
+                  {project.sideNote}
+                </Text>
+              )}
 
-            <HStack py={2}>
-              {project.links.map((link, idx) => (
-                <Button
-                  key={idx}
-                  size="sm"
-                  leftIcon={
-                    link.text.toLowerCase().includes('github') ? (
-                      <FaGithub />
-                    ) : (
-                      <LuArrowUpRight />
-                    )
-                  }
-                  onClick={() => visitProject(link.href)}
-                >
-                  {link.text}
-                </Button>
-              ))}
-            </HStack>
+              {/* Action Buttons */}
+              <HStack spacing={2} pt={2}>
+                {project.links.map((link, idx) => (
+                  <Button
+                    key={idx}
+                    size="sm"
+                    leftIcon={
+                      link.text.toLowerCase().includes('github') ? (
+                        <FaGithub />
+                      ) : (
+                        <LuArrowUpRight />
+                      )
+                    }
+                    onClick={() => visitProject(link.href)}
+                  >
+                    {link.text}
+                  </Button>
+                ))}
+              </HStack>
 
-            <HStack pt={4} spacing={2}>
-              {project.badges.map((badge) => (
-                <Badge key={badge.name} colorScheme={badge.colorScheme}>
-                  {badge.name}
-                </Badge>
-              ))}
-            </HStack>
-          </CardBody>
-        </Card>
+              {/* Technology Badges */}
+              <HStack spacing={2} wrap="wrap" pt={2}>
+                {project.badges.map((badge) => (
+                  <Badge key={badge.name} colorScheme={badge.colorScheme}>
+                    {badge.name}
+                  </Badge>
+                ))}
+              </HStack>
+            </VStack>
+          </VStack>
+        </Box>
       </Fade>
     </>
   );

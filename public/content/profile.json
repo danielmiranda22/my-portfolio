@@ -1,24 +1,25 @@
 {
   "logo": "DO",
-  "title": "Full-Stack . NET Developer",
+  "title": "Pragmatic and Enthusiastic Programmer",
   "heroCumpliment": "First of all, thank you for checking out my portfolio and wanting to know more about me!  I'm Daniel Oliveira, a software developer based in Porto, Portugal. I currently work at Innux Technologies, where I collaborate on several commercial projects.",
   "aboutBrief": "From building desktop and mobile apps to APIs and robust web applications, I love creating innovative solutions.  I strive to stay up-to-date with the latest technologies and am committed to continuous learning and growth.",
   "tech": [
-    ". NET",
+    ".NET",
     "ASP.NET",
     "JavaScript",
     "TypeScript",
     "Node.js",
     "jQuery",
     "Xamarin",
-    ". Net MAUI",
+    ".Net MAUI",
     "Azure"
   ],
   "aboutExtra": "That being said, I’m always open to learning new technologies. For example, this portfolio is built with React and TypeScript — tech I hadn’t used extensively until recently. I enjoy working on web, desktop, and the occasional CLI tool, especially when it solves a real problem or helps someone out. Exploring different areas, from .NET to TypeScript and beyond, keeps coding interesting for me.",
-  "aboutActivitiesTitle": "Apart from coding, some other activities that I love to do! ",
-  "aboutActivitiesTravel": "Sports",
-  "aboutActivitiesPlaySports": "Travel",
-  "aboutActivitiesHangOut": "Tracking",
+  "aboutActivitiesTitle": "Apart from coding, here are some other activities I love:",
+  "aboutActivitiesPlaySports": "Sports",
+  "aboutActivitiesTravel": "Travel",
+  "aboutActivitiesHiking": "Hiking",
+  "aboutActivitiesHangOut": "Coffee with friends",
   "tools": [
     "Visual Studio / VS Code",
     "Git",
@@ -59,5 +60,6 @@
   "contactPhoneNumber": "(+351) 912 012 095",
   "contactEmail": "danmiranda227@gmail.com",
   "contactAddress": "Porto, Portugal",
-  "contactLinkdin": "https://www.linkedin.com/in/daniel-oliveira-a8844b169"
+  "contactLinkdin": "https://www.linkedin.com/in/daniel-oliveira-a8844b169",
+  "contactGithub": "https://github.com/danielmiranda22"
 }

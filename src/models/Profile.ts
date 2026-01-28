@@ -8,6 +8,7 @@ export default interface Profile {
   aboutActivitiesTitle: string;
   aboutActivitiesTravel: string;
   aboutActivitiesPlaySports: string;
+  aboutActivitiesHiking: string;
   aboutActivitiesHangOut: string;
   tools: string[];
   resumeHeaderOne: string;
@@ -20,4 +21,5 @@ export default interface Profile {
   contactEmail: string;
   contactAddress: string;
   contactLinkdin: string;
+  contactGithub: string;
 }

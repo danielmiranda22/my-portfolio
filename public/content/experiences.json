@@ -1,27 +1,27 @@
 [
   {
-    "company": "Innux Technologies",
-    "role": "FullStack Developer",
-    "interval": "Feb '20 - Present",
-    "image": "/assets/company_logo.webp",
+    "company": "Northstar Digital",
+    "role": "Full-Stack Developer",
+    "interval": "Mar '18 - Present",
+    "image": "/assets/company_logo.jpg",
     "tag": {
-      "tagName": "Technology"
+      "tagName": "Software"
     },
     "badges": [
-      { "name": "C#", "colorScheme": "purple" },
-      { "name": ". NET", "colorScheme": "blue" },
-      { "name": "JavaScript", "colorScheme": "yellow" },
+      { "name": "Java", "colorScheme": "red" },
+      { "name": ".NET", "colorScheme": "blue" },
+      { "name": "TypeScript", "colorScheme": "blue" },
       { "name": "HTML & CSS", "colorScheme": "orange" },
-      { "name": "Bootstrap", "colorScheme": "red" },
+      { "name": "React", "colorScheme": "cyan" },
       { "name": "SQL", "colorScheme": "gray" }
     ],
     "listItems": [
-      "Developed a complaint management system (whistleblower channel) with secure data handling, role-based access controls, and audit logging for compliance.",
-      "Implemented custom ASP.NET Tag Helpers for authorization logic, validating user permissions and enforcing license-based feature restrictions.",
-      "Built and maintained an HR management platform (.NET MVC) covering attendance tracking, access control, asset management, and workforce administration.",
-      "Developed and maintained cross-platform mobile applications using Xamarin and .NET MAUI for Android, focusing on access control and time-tracking features.",
-      "Contributed to backend services (.NET Core) for commercial ticketing, access management, and employee clocking systems.",
-      "Maintained legacy ASP.NET Web Forms applications, ensuring stability and implementing incremental improvements."
+      "Built and maintained internal business tools for operations, reporting, and workflow management.",
+      "Developed backend APIs and service integrations to support customer-facing and internal applications.",
+      "Implemented role-based access patterns and secure data handling across administrative features.",
+      "Contributed to responsive frontend interfaces with a focus on usability and maintainable component structures.",
+      "Collaborated with product and design stakeholders to translate requirements into reliable software solutions.",
+      "Improved legacy code paths and supported gradual modernization of long-running applications."
     ]
   }
 ]

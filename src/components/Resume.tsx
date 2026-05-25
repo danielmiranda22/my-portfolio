@@ -10,36 +10,36 @@ import {
   Text,
   useColorModeValue,
   VStack,
-} from '@chakra-ui/react';
-import { LuBriefcase } from 'react-icons/lu';
-import ProfileData from '../data/ProfileData';
-import { FaDownload } from 'react-icons/fa';
-import { Fade } from 'react-awesome-reveal';
+} from "@chakra-ui/react";
+import { LuBriefcase } from "react-icons/lu";
+import ProfileData from "../data/ProfileData";
+import { FaDownload } from "react-icons/fa";
+import { Fade } from "react-awesome-reveal";
 
 const Resume = () => {
   const { profile, loading } = ProfileData();
 
-  const cardBg = useColorModeValue('gray.50', 'gray.800');
-  const cardBorder = useColorModeValue('gray.200', 'gray.700');
-  const iconBg = useColorModeValue('brand.500', 'brand.400');
-  const headingColor = useColorModeValue('gray.700', 'gray.300');
+  const cardBg = useColorModeValue("gray.50", "gray.800");
+  const cardBorder = useColorModeValue("gray.200", "gray.700");
+  const iconBg = useColorModeValue("brand.500", "brand.400");
+  const headingColor = useColorModeValue("gray.700", "gray.300");
 
   const downloadCV = () => {
-    fetch('content/cv.pdf')
+    fetch("content/cv.pdf")
       .then((resp) => {
-        if (!resp.ok) throw new Error('Error fetching data');
+        if (!resp.ok) throw new Error("Error fetching data");
         return resp.blob();
       })
       .then((blob) => {
         const fileURL = window.URL.createObjectURL(blob);
-        const alink = document.createElement('a');
+        const alink = document.createElement("a");
         alink.href = fileURL;
-        alink.download = 'cv_danielOliveira.pdf';
+        alink.download = "cv_alexlambert.pdf";
         alink.click();
       })
       .catch((error) => {
-        console.error('Error downloading CV:', error);
-        alert('Failed to download CV. Please try again.');
+        console.error("Error downloading CV:", error);
+        alert("Failed to download CV. Please try again.");
       });
   };
 
@@ -127,10 +127,10 @@ const Resume = () => {
             colorScheme="brand"
             leftIcon={<FaDownload />}
             _hover={{
-              bg: 'brand.500',
-              color: 'white',
-              transform: 'translateY(-2px)',
-              boxShadow: 'md',
+              bg: "brand.500",
+              color: "white",
+              transform: "translateY(-2px)",
+              boxShadow: "md",
             }}
             transition="all 0.2s"
           >

@@ -1,7 +1,7 @@
-import { Box, Container, Image, Skeleton, Stack, Text } from '@chakra-ui/react';
-import { Fade } from 'react-awesome-reveal';
-import ProfileData from '../data/ProfileData';
-import profileIMG from '../assets/profileIMG.webp';
+import { Box, Container, Image, Skeleton, Stack, Text } from "@chakra-ui/react";
+import { Fade } from "react-awesome-reveal";
+import ProfileData from "../data/ProfileData";
+import profileIMG from "../assets/user.jpg";
 
 const Hero = () => {
   const { profile, loading } = ProfileData();
@@ -34,7 +34,7 @@ const Hero = () => {
         spacing={10}
       >
         <Fade direction="up" triggerOnce>
-          <Box minW={'fit-content'}>
+          <Box minW={"fit-content"}>
             <Image
               rounded="full"
               boxSize="350px"
@@ -42,17 +42,17 @@ const Hero = () => {
               src={profileIMG}
               alt={profile.logo}
               style={{
-                boxShadow: '0 20px 60px rgba(0, 128, 128, 0.3)',
-                transition: 'transform 0.3s ease',
+                boxShadow: "0 20px 60px rgba(0, 128, 128, 0.3)",
+                transition: "transform 0.3s ease",
               }}
-              _hover={{ transform: 'scale(1.05)' }}
+              _hover={{ transform: "scale(1.05)" }}
             />
           </Box>
           <Text
-            fontSize={{ base: 'xl', md: '2xl' }}
+            fontSize={{ base: "xl", md: "2xl" }}
             fontWeight="medium"
             color="gray.600"
-            _dark={{ color: 'gray.400' }}
+            _dark={{ color: "gray.400" }}
           >
             {profile.title}
           </Text>

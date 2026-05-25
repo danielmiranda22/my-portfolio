@@ -15,11 +15,11 @@ import {
   useColorModeValue,
   useDisclosure,
   VStack,
-} from '@chakra-ui/react';
-import { Fade } from 'react-awesome-reveal';
-import Project from '../models/Project';
-import { LuArrowUpRight } from 'react-icons/lu';
-import { FaGithub, FaWindowClose } from 'react-icons/fa';
+} from "@chakra-ui/react";
+import { Fade } from "react-awesome-reveal";
+import Project from "../models/Project";
+import { LuArrowUpRight } from "react-icons/lu";
+import { FaGithub, FaWindowClose } from "react-icons/fa";
 
 interface Props {
   project: Project;
@@ -28,11 +28,11 @@ interface Props {
 const ProjectComponent = ({ project }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const cardBg = useColorModeValue('gray.50', 'gray.800');
-  const cardBorder = useColorModeValue('gray.200', 'gray.700');
+  const cardBg = useColorModeValue("gray.50", "gray.800");
+  const cardBorder = useColorModeValue("gray.200", "gray.700");
 
   const visitProject = (href: string) => {
-    window.open(href, '_blank', 'noopener,noreferrer');
+    window.open(href, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -83,7 +83,7 @@ const ProjectComponent = ({ project }: Props) => {
           position="relative"
           transition="all 0.2s"
         >
-          {project.status === 'in-progress' && (
+          {project.status === "in-progress" && (
             <Badge
               position="absolute"
               top={4}
@@ -110,8 +110,9 @@ const ProjectComponent = ({ project }: Props) => {
                 src={project.image}
                 alt={project.title}
                 w="100%"
+                maxH="200px"
                 transition="transform 0.2s"
-                _hover={{ transform: 'scale(1.02)' }}
+                _hover={{ transform: "scale(1.02)" }}
               />
             </Box>
 
@@ -133,7 +134,7 @@ const ProjectComponent = ({ project }: Props) => {
                     key={idx}
                     size="sm"
                     leftIcon={
-                      link.text.toLowerCase().includes('github') ? (
+                      link.text.toLowerCase().includes("github") ? (
                         <FaGithub />
                       ) : (
                         <LuArrowUpRight />

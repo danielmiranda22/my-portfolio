@@ -1,22 +1,22 @@
 {
-  "logo": "DO",
-  "title": "Pragmatic and Enthusiastic Programmer",
-  "heroCumpliment": "First of all, thank you for checking out my portfolio and wanting to know more about me!  I'm Daniel Oliveira, a software developer based in Porto, Portugal. I currently work at Innux Technologies, where I collaborate on several commercial projects.",
-  "aboutBrief": "From building desktop and mobile apps to APIs and robust web applications, I love creating innovative solutions.  I strive to stay up-to-date with the latest technologies and am committed to continuous learning and growth.",
+  "logo": "AL",
+  "title": "Pragmatic and Curious Software Developer",
+  "heroCumpliment": "Thanks for stopping by and taking a look at this portfolio. I'm Alex Lambert, a software developer based in Lisbon, Portugal. I currently work with cross-functional teams to build internal platforms, business tools, and customer-facing web applications.",
+  "aboutBrief": "From backend services and APIs to responsive interfaces and mobile-friendly experiences, I enjoy building software that is practical, maintainable, and genuinely useful. I care about clean architecture, continuous learning, and creating solutions that solve real problems.",
   "tech": [
     ".NET",
-    "ASP.NET",
+    "ASP.NET Core",
     "JavaScript",
     "TypeScript",
     "Node.js",
-    "jQuery",
-    "Xamarin",
-    ".Net MAUI",
-    "Azure"
+    "SQL",
+    "React",
+    "Azure",
+    "REST APIs"
   ],
-  "aboutExtra": "That being said, I’m always open to learning new technologies. For example, this portfolio is built with React and TypeScript — tech I hadn’t used extensively until recently. I enjoy working on web, desktop, and the occasional CLI tool, especially when it solves a real problem or helps someone out. Exploring different areas, from .NET to TypeScript and beyond, keeps coding interesting for me.",
-  "aboutActivitiesTitle": "Apart from coding, here are some other activities I love:",
-  "aboutActivitiesPlaySports": "Sports",
+  "aboutExtra": "I'm especially interested in projects that combine strong backend foundations with thoughtful user experience. I enjoy working across different layers of an application, from data modeling and API design to frontend implementation and developer tooling. Exploring new technologies and improving my workflow is a big part of what keeps software development exciting for me.",
+  "aboutActivitiesTitle": "Outside of coding, here are a few things I enjoy:",
+  "aboutActivitiesPlaySports": "Running",
   "aboutActivitiesTravel": "Travel",
   "aboutActivitiesHiking": "Hiking",
   "aboutActivitiesHangOut": "Coffee with friends",
@@ -31,35 +31,33 @@
     "StackOverflow",
     "Mac"
   ],
-  "resumeHeaderOne": "Backend & Full-Stack Development",
+  "resumeHeaderOne": "Backend & Platform Development",
   "resumeInfoOne": [
-    "Building backend services and APIs with C# and .NET Core/MVC",
-    "Database design and queries with SQL Server, LINQ, and ADO.NET",
-    "Implementing custom permission systems with user profiles and access controls",
-    "Developing business logic for HR, access control, and ticketing systems",
-    "Working with ASP.NET Web Forms and legacy application maintenance"
+    "Designing and building backend services with C# and ASP.NET Core",
+    "Creating and integrating REST APIs for internal and external systems",
+    "Modeling relational data and writing efficient SQL queries",
+    "Implementing authentication, authorization, and role-based access logic",
+    "Maintaining and improving business-critical application workflows"
   ],
-
-  "resumeHeaderTwo": "Frontend & Mobile Development",
+  "resumeHeaderTwo": "Frontend & Product Implementation",
   "resumeInfoTwo": [
-    "Creating responsive web interfaces with JavaScript, HTML, CSS, and Bootstrap",
-    "Building cross-platform mobile apps with Xamarin and .NET MAUI",
-    "Integrating frontend with .NET MVC backend and REST APIs",
-    "Developing Windows desktop applications (console and GUI)",
-    "Learning modern frontend with React and TypeScript"
+    "Building responsive user interfaces with HTML, CSS, JavaScript, and TypeScript",
+    "Developing component-based frontend applications with React",
+    "Connecting frontend experiences to APIs and backend services",
+    "Improving usability, performance, and mobile responsiveness",
+    "Translating product requirements into clean, maintainable UI solutions"
   ],
-
-  "resumeHeaderThree": "Development Practices & Tools",
+  "resumeHeaderThree": "Practices & Collaboration",
   "resumeInfoThree": [
-    "Version control with Git and Azure DevOps workflows",
-    "Agile development with sprint planning and code reviews",
-    "API testing and debugging with Postman",
-    "Exposure to Domain-Driven Design and Test-Driven Development concepts",
-    "Working across .NET Framework, .NET 6.0, 7.0, and 8.0"
+    "Version control and collaborative development with Git-based workflows",
+    "Working in agile teams with iterative planning and regular delivery",
+    "Debugging APIs and integrations with Postman and browser dev tools",
+    "Focusing on maintainability, readability, and long-term code quality",
+    "Continuously learning new tools, frameworks, and engineering practices"
   ],
-  "contactPhoneNumber": "(+351) 912 012 095",
-  "contactEmail": "danmiranda227@gmail.com",
-  "contactAddress": "Porto, Portugal",
-  "contactLinkdin": "https://www.linkedin.com/in/daniel-oliveira-a8844b169",
-  "contactGithub": "https://github.com/danielmiranda22"
+  "contactPhoneNumber": "(+351) 910 000 000",
+  "contactEmail": "alex.lambert.dev@example.com",
+  "contactAddress": "Lisbon, Portugal",
+  "contactLinkdin": "https://www.linkedin.com/in/alex-lambert-dev",
+  "contactGithub": "https://github.com/example"
 }

@@ -1,43 +1,59 @@
 [
   {
-    "name": "C# to TypeScript parser",
-    "description": "A command-line tool that converts C# classes to TypeScript interfaces. Supports basic data types, arrays, nullable types, and nested classes. Built entirely with TypeScript and Node.js using modern ESM standards, it features ergonomic configuration, robust error handling, and full test coverage - making it practical and easily extensible for real-world .NET-to-TypeScript workflows.",
-    "sideNote": "Created for practical work needs and as an experiment in Node.js & CLI engineering.",
-    "image": "/assets/dotnet_to_ts_showcase.webp",
+    "name": "InvoiceFlow",
+    "description": "A command-line tool for transforming invoice export files into normalized JSON and CSV formats. Supports schema validation, configurable field mapping, and batch processing, making it useful for finance and back-office automation workflows.",
+    "sideNote": "Created as a sample automation tool for data transformation and CLI workflow design.",
+    "image": "/assets/project.jpg",
     "badges": [
       { "name": "TypeScript", "colorScheme": "blue" },
       { "name": "Node.js", "colorScheme": "green" },
       { "name": "CLI", "colorScheme": "gray" },
-      { "name": "Vitest", "colorScheme": "red" }
+      { "name": "Testing", "colorScheme": "red" }
     ],
     "links": [
       {
         "text": "GitHub",
-        "href": "https://github.com/danielmiranda22/dotnet-to-ts"
+        "href": "https://github.com/example/invoiceflow"
       }
     ]
   },
   {
-    "name": "Game Finder",
-    "description": "Built to go deep into the basics of React and TypeScript, this project showcases modern state management with React Query, client-side routing, API integration, and responsive design. Features include infinite scroll pagination, dark/light mode, and optimized loading states with skeleton screens.",
-    "sideNote": "Built to dive into React state management, API calls, and handling dynamic data.",
-    "image": "/assets/game_finder_poster.webp",
+    "name": "TrailNotes",
+    "description": "A web application for organizing travel notes, saved places, and short trip summaries. Includes client-side routing, responsive layouts, local persistence, and lightweight filtering for a smooth mobile-first experience.",
+    "sideNote": "Built as a sample frontend project focused on usability, responsive design, and local-first interaction.",
+    "image": "/assets/project.jpg",
     "badges": [
       { "name": "React", "colorScheme": "blue" },
       { "name": "TypeScript", "colorScheme": "blue" },
-      { "name": "React Query", "colorScheme": "red" },
-      { "name": "Chakra UI", "colorScheme": "teal" },
-      { "name": "React Router", "colorScheme": "purple" },
-      { "name": "Vite", "colorScheme": "yellow" }
+      { "name": "Router", "colorScheme": "purple" },
+      { "name": "CSS", "colorScheme": "yellow" }
     ],
     "links": [
       {
         "text": "Live Demo",
-        "href": "https://game-finder-by-dano.vercel.app/"
+        "href": "https://example.com/trailnotes"
       },
       {
         "text": "GitHub",
-        "href": "https://github.com/danielmiranda22/game-finder"
+        "href": "https://github.com/example/trailnotes"
+      }
+    ]
+  },
+  {
+    "name": "StockRoom",
+    "description": "A dashboard concept for tracking office equipment, stock levels, and internal requests. Features searchable tables, status filters, reusable UI components, and clean visual hierarchy for admin workflows.",
+    "sideNote": "Designed as a sample internal tool interface for inventory and operations management.",
+    "image": "/assets/project.jpg",
+    "badges": [
+      { "name": "React", "colorScheme": "blue" },
+      { "name": "JavaScript", "colorScheme": "yellow" },
+      { "name": "Dashboard", "colorScheme": "gray" },
+      { "name": "UI", "colorScheme": "teal" }
+    ],
+    "links": [
+      {
+        "text": "Live Demo",
+        "href": "https://example.com/stockroom"
       }
     ]
   }
